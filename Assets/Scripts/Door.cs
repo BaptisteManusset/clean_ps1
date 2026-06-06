@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEditor;
@@ -14,8 +15,6 @@ public class Door : MonoBehaviour, IUsable
 
     public NavMeshLink MeshLink;
 
-    private bool isGoto = false;
-
     private void Awake()
     {
         MeshLink = GetComponent<NavMeshLink>();
@@ -25,7 +24,7 @@ public class Door : MonoBehaviour, IUsable
 
     public void Use()
     {
-        if (isGoto) return;
+        if(countdown) return;
         if (Destination == null) return;
         if ((key == null || !Inventory.Instance.Contains(key)) && key != null) return;
 
@@ -34,13 +33,21 @@ public class Door : MonoBehaviour, IUsable
 
     public void ExitUse()
     {
-        isGoto = false;
     }
 
     private void GoTo()
     {
-        isGoto = true;
         Player.Instance.Teleport(anchor);
+        StartCoroutine(PlayingCountdown());
+    }
+
+    public bool countdown = false;
+
+    IEnumerator PlayingCountdown()
+    {
+        countdown = true;
+        yield return new WaitForSecondsRealtime(1f);
+        countdown = false;
     }
 
     private void OnDrawGizmos()
