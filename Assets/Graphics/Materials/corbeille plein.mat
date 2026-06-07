@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: corbeille
+  m_Name: corbeille plein
   m_Shader: {fileID: -6465566751694194690, guid: e6c17cccbdd0fb2499df5097e6ce4736, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -25,11 +25,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_22a418d96f3f484592dd7fe79cb72d22:
-        m_Texture: {fileID: 2800000, guid: b5a6f4616b29d7a4babfd5bad3bcc2e5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6bcedb7f379148d4b8ee9cb129130d85, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: b5a6f4616b29d7a4babfd5bad3bcc2e5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6bcedb7f379148d4b8ee9cb129130d85, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Basemap:
@@ -57,7 +57,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b5a6f4616b29d7a4babfd5bad3bcc2e5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6bcedb7f379148d4b8ee9cb129130d85, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:

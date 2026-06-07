@@ -17,6 +17,7 @@ public class Door : MonoBehaviour, IUsable
 
     private void Awake()
     {
+        if (Destination == null) return;
         MeshLink = GetComponent<NavMeshLink>();
 
         MeshLink.endTransform = Destination.anchor;

@@ -297,10 +297,10 @@ Transform:
   - {fileID: 3138202901615882997}
   - {fileID: 6088439423098679370}
   - {fileID: 6247107205992234465}
-  - {fileID: 487678838741712969}
-  - {fileID: 6634404467243088118}
-  - {fileID: 5845550592802224163}
-  - {fileID: 2060754400942442861}
+  - {fileID: 8012569719473305996}
+  - {fileID: 3883487519050088755}
+  - {fileID: 6271983282143205612}
+  - {fileID: 1913005019698178466}
   m_Father: {fileID: 3689625011912849426}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &56274175592148695
@@ -797,14 +797,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corbeille
       objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.9999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.50000083
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.38268548
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.92387867
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -135
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
---- !u!4 &487678838741712969 stripped
+--- !u!4 &8012569719473305996 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 215800752305542222, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
   m_PrefabInstance: {fileID: 304618553557111815}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &479430754067967438
@@ -1503,6 +1531,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1449951667564534255, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.500004
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449951667564534255, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.499997
+      objectReference: {fileID: 0}
     - target: {fileID: 3908767424000263444, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
       propertyPath: m_Name
       value: plant pot (1)
@@ -1512,9 +1548,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
---- !u!4 &2060754400942442861 stripped
+--- !u!4 &1913005019698178466 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 1299954279526840608, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1449951667564534255, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
   m_PrefabInstance: {fileID: 1050210291059355725}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1172365334300555575
@@ -5965,6 +6001,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1449951667564534255, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449951667564534255, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449951667564534255, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449951667564534255, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.412
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449951667564534255, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.236
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449951667564534255, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3908767424000263444, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
       propertyPath: m_Name
       value: plant pot
@@ -5974,9 +6034,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
---- !u!4 &5845550592802224163 stripped
+--- !u!4 &6271983282143205612 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 1299954279526840608, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1449951667564534255, guid: a85ec5296bc714647a108ba69c2035ea, type: 3}
   m_PrefabInstance: {fileID: 4833994954147545347}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4841326873971911289
@@ -8851,14 +8911,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corbeille (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.9999986
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710784
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071058
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
---- !u!4 &6634404467243088118 stripped
+--- !u!4 &3883487519050088755 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 215800752305542222, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
   m_PrefabInstance: {fileID: 6839998143391001784}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6910120285054377372

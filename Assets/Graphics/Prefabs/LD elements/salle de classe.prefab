@@ -94,7 +94,7 @@ Transform:
   - {fileID: 2187351444738940174}
   - {fileID: 2326816113502235456}
   - {fileID: 7907298113003193188}
-  - {fileID: 8411348204487310280}
+  - {fileID: 2111577191018447373}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4560850647041841807
@@ -5375,14 +5375,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corbeille
       objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.49999523
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.500002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
---- !u!4 &8411348204487310280 stripped
+--- !u!4 &2111577191018447373 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 215800752305542222, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
   m_PrefabInstance: {fileID: 8522412502720114566}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8561588022014959666

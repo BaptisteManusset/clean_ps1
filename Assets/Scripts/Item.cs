@@ -1,6 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Item : MonoBehaviour, IUsable
+public class Item : MonoBehaviour
 {
     public ItemData data;
     public int count = 1;
@@ -14,10 +14,4 @@ public class Item : MonoBehaviour, IUsable
     public void ExitUse()
     {
     }
-}
-
-public interface IUsable
-{
-    public void Use();
-    public void ExitUse();
 }
