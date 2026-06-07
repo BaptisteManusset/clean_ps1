@@ -57,10 +57,7 @@ public class Door : MonoBehaviour, IUsable
         Gizmos.DrawCube(anchor.position, Vector3.one * .2f);
         Gizmos.DrawCube(anchor.position + anchor.forward, Vector3.one * .1f);
         Gizmos.DrawLine(anchor.position, anchor.position + anchor.forward);
-    }
 
-    private void OnDrawGizmosSelected()
-    {
         if (Destination == null) return;
         Gizmos.color = new Color(0.31f, 0.85f, 1f);
         Gizmos.DrawLine(transform.position + Vector3.up, Destination.transform.position);

@@ -82,6 +82,10 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 4d56bb6c3154abb4c959c8eb0a79588a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
+      objectReference: {fileID: 2100000, guid: 57f9148bdb9117f42ac5f37d0543d3bb, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 4d56bb6c3154abb4c959c8eb0a79588a, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
       objectReference: {fileID: 2100000, guid: b708875c9ebd23349810bf0ebb2265d3, type: 2}
     - target: {fileID: 919132149155446097, guid: 4d56bb6c3154abb4c959c8eb0a79588a, type: 3}
       propertyPath: m_Name
@@ -132,6 +136,7 @@ MonoBehaviour:
   anchor: {fileID: 5102904016722563207}
   Destination: {fileID: 0}
   MeshLink: {fileID: 0}
+  countdown: 0
 --- !u!65 &7259614022396193914
 BoxCollider:
   m_ObjectHideFlags: 0
