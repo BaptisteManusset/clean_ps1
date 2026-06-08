@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using JSAM;
 using Unity.AI.Navigation;
 using UnityEditor;
 using UnityEngine;
@@ -14,6 +15,9 @@ public class Door : MonoBehaviour, IUsable
     public Door Destination;
 
     public NavMeshLink MeshLink;
+
+    public SoundFileObject openSound;
+    public SoundFileObject lockSound;
 
     private void Awake()
     {
@@ -29,16 +33,19 @@ public class Door : MonoBehaviour, IUsable
         if (Destination == null)
         {
             CenterMessage.Instance.PublishMessage("La porte est bloquée");
+            if (lockSound) lockSound.Play(transform.position);
             return;
         }
 
         if ((key == null || !Inventory.Instance.Contains(key)) && key != null)
         {
             CenterMessage.Instance.PublishMessage("Une clé est nécessaire");
+            if (lockSound) lockSound.Play(transform.position);
             return;
         }
 
         Destination.GoTo();
+        if (openSound) openSound.Play(transform.position);
     }
 
     public void ExitUse()

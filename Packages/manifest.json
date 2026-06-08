@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.brogrammist.jsam": "https://github.com/jackyyang09/Simple-Unity-Audio-Manager.git#master",
     "com.unity.ai.navigation": "2.0.11",
     "com.unity.cinemachine": "3.1.6",
     "com.unity.collab-proxy": "2.12.4",

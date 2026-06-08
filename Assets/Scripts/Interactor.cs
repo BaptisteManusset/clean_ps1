@@ -1,5 +1,5 @@
 using System;
-using Unity.VisualScripting;
+using JSAM;
 using UnityEngine;
 
 [SelectionBase]
@@ -11,6 +11,9 @@ public class Interactor : MonoBehaviour, IUsable
 
     public GameObject defaultVisual;
     public GameObject usedVisual;
+    
+    public SoundFileObject useSound;
+
 
 
     public event Action Used; 
@@ -30,6 +33,7 @@ public class Interactor : MonoBehaviour, IUsable
         defaultVisual.SetActive(false);
         usedVisual.SetActive(true);
         Used?.Invoke();
+        useSound?.Play();
     }
 
     public void ExitUse()

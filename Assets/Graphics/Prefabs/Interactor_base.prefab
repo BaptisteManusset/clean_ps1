@@ -82,6 +82,7 @@ MonoBehaviour:
   isAlreadyUsed: 0
   defaultVisual: {fileID: 8699489725645905248}
   usedVisual: {fileID: 196066296715330459}
+  useSound: {fileID: 0}
 --- !u!65 &6254299984937448252
 BoxCollider:
   m_ObjectHideFlags: 0

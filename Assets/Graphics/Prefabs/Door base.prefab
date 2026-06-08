@@ -82,6 +82,8 @@ MonoBehaviour:
   anchor: {fileID: 4199995088409171810}
   Destination: {fileID: 0}
   MeshLink: {fileID: 0}
+  openSound: {fileID: 0}
+  lockSound: {fileID: 0}
   countdown: 0
 --- !u!65 &6989758864289445222
 BoxCollider:
