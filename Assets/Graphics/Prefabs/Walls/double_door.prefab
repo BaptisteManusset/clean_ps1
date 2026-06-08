@@ -52,9 +52,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1104575833366885464, guid: b663033a68f3f4646827db36ff363aea, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2187845231619025151, guid: b663033a68f3f4646827db36ff363aea, type: 3}
       propertyPath: m_Name
       value: Door base
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187845231619025151, guid: b663033a68f3f4646827db36ff363aea, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6989758864289445222, guid: b663033a68f3f4646827db36ff363aea, type: 3}
       propertyPath: m_Size.z
@@ -140,6 +148,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5032e1c4bfac11a4bbc5101000bb1c2a, type: 3}
       propertyPath: m_Name
       value: double_door
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5032e1c4bfac11a4bbc5101000bb1c2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

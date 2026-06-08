@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 57f9148bdb9117f42ac5f37d0543d3bb, type: 2}
+    - target: {fileID: -5122287270029592220, guid: d9bda168765979247b32940159a1d040, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -3408309330981493639, guid: d9bda168765979247b32940159a1d040, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -64,9 +68,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 297383959100031093, guid: d9bda168765979247b32940159a1d040, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d9bda168765979247b32940159a1d040, type: 3}
       propertyPath: m_Name
       value: stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9bda168765979247b32940159a1d040, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3957745870361079274, guid: d9bda168765979247b32940159a1d040, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -76,6 +88,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: d75f8f9b6dbfc4247b2e8fe5c7807dae, type: 2}
+    - target: {fileID: 6329867290311459219, guid: d9bda168765979247b32940159a1d040, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8269316600198577162, guid: d9bda168765979247b32940159a1d040, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -90,40 +106,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -5122287270029592220, guid: d9bda168765979247b32940159a1d040, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4152999980909127641}
-    - targetCorrespondingSourceObject: {fileID: -6502841264827794098, guid: d9bda168765979247b32940159a1d040, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3280684077704451515}
     - targetCorrespondingSourceObject: {fileID: 297383959100031093, guid: d9bda168765979247b32940159a1d040, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4974747514022169046}
   m_SourcePrefab: {fileID: 100100000, guid: d9bda168765979247b32940159a1d040, type: 3}
---- !u!1 &628349693024642311 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -6502841264827794098, guid: d9bda168765979247b32940159a1d040, type: 3}
-  m_PrefabInstance: {fileID: 3276681977190307913}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &3280684077704451515
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628349693024642311}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1615843856221984047, guid: d9bda168765979247b32940159a1d040, type: 3}
 --- !u!1 &1553995000645886253 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5122287270029592220, guid: d9bda168765979247b32940159a1d040, type: 3}

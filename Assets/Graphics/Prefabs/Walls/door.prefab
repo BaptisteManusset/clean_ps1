@@ -154,9 +154,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1104575833366885464, guid: b663033a68f3f4646827db36ff363aea, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2187845231619025151, guid: b663033a68f3f4646827db36ff363aea, type: 3}
       propertyPath: m_Name
       value: Door base
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187845231619025151, guid: b663033a68f3f4646827db36ff363aea, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
