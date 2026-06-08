@@ -31,4 +31,9 @@ public class TodoListManager : MonoSingleton<TodoListManager>
             }
         }
     }
+
+    public void Clear(ItemData itemData)
+    {
+        trashVariable.Value = 0;
+    }
 }

@@ -25,9 +25,18 @@ public class Door : MonoBehaviour, IUsable
 
     public void Use()
     {
-        if(countdown) return;
-        if (Destination == null) return;
-        if ((key == null || !Inventory.Instance.Contains(key)) && key != null) return;
+        if (countdown) return;
+        if (Destination == null)
+        {
+            CenterMessage.Instance.PublishMessage("La porte est bloquée");
+            return;
+        }
+
+        if ((key == null || !Inventory.Instance.Contains(key)) && key != null)
+        {
+            CenterMessage.Instance.PublishMessage("Une clé est nécessaire");
+            return;
+        }
 
         Destination.GoTo();
     }
@@ -54,24 +63,38 @@ public class Door : MonoBehaviour, IUsable
     private void OnDrawGizmos()
     {
         Gizmos.color = Destination ? Color.green : Color.red;
-
-        Gizmos.DrawCube(anchor.position, Vector3.one * .2f);
-        Gizmos.DrawCube(anchor.position + anchor.forward, Vector3.one * .1f);
-        Gizmos.DrawLine(anchor.position, anchor.position + anchor.forward);
-
-        if (Destination == null) return;
-        Gizmos.color = new Color(0.31f, 0.85f, 1f);
-        Gizmos.DrawLine(transform.position + Vector3.up, Destination.transform.position);
+        if (Destination == null)
+        {
+            Gizmos.DrawCube(transform.position, Vector3.one);
+        }
+        else
+        {
+            Gizmos.DrawCube(anchor.position, Vector3.one * .2f);
+            Gizmos.DrawCube(anchor.position + anchor.forward, Vector3.one * .1f);
+            Gizmos.DrawLine(anchor.position, anchor.position + anchor.forward);
+            Gizmos.color = new Color(0.31f, 0.85f, 1f);
+            Gizmos.DrawLine(transform.position + Vector3.up, Destination.transform.position);
+        }
     }
 
+
+    [MenuItem("CONTEXT/MeshFilter/Custom Mesh Filter Item")]
+    static void TestMeshFilterMenuItem()
+    {
+        Debug.Log("MeshFilter Menu Item");
+        LinkDoors();
+    }
+
+
     [ContextMenu("Link doors")]
-    private void LinkDoors()
+    private static void LinkDoors()
     {
         List<Door> doors = new();
 
         foreach (GameObject gameObject in Selection.gameObjects)
         {
-            if (gameObject.TryGetComponent(out Door door))
+            Door door = gameObject.GetComponentInChildren<Door>(true);
+            if (door)
             {
                 doors.Add(door);
             }
