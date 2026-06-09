@@ -15,8 +15,7 @@ MonoBehaviour:
   safeName: 
   presetDescription: 
   files:
-  - {fileID: 8300000, guid: a3aff06074505fb46917e2a8316ae3bf, type: 3}
-  - {fileID: 8300000, guid: 842b46e3b31b6c548bcc63a24440e930, type: 3}
+  - {fileID: 8300000, guid: 0932c2e8894a21344becc96cc52e7175, type: 3}
   neverRepeat: 0
   loopStart: 0
   loopEnd: 0
@@ -25,7 +24,7 @@ MonoBehaviour:
   spatialize: 0
   maxDistance: 0
   priority: 128
-  startingPitch: 1
+  startingPitch: 2
   pitchShift: 0.05
   loopMode: 0
   delay: 0

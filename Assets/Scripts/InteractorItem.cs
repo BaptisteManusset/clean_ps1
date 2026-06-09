@@ -3,7 +3,7 @@ using JSAM;
 using UnityEngine;
 
 [SelectionBase]
-public class Interactor : MonoBehaviour, IUsable
+public class InteractorItem : MonoBehaviour, IUsable
 {
     public IntRef variable;
 

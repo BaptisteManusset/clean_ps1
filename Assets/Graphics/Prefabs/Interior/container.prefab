@@ -277,6 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemData: {fileID: 11400000, guid: 38816ee32abd3144b8a11f955c9d60c5, type: 2}
+  lockSound: {fileID: 11400000, guid: 574b5442d183cfe46bcf43dce518a108, type: 2}
 --- !u!4 &5238810443406767741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8720451048009332219, guid: 37d9608d056e0ab47a9eb011c4e379b4, type: 3}

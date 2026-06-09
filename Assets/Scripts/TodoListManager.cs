@@ -6,10 +6,10 @@ public class TodoListManager : MonoSingleton<TodoListManager>
     public IntRef plantVariable;
     public IntRef trashVariable;
 
-    public List<Interactor> plants = new();
-    public List<Interactor> trash = new();
+    public List<InteractorItem> plants = new();
+    public List<InteractorItem> trash = new();
 
-    public Interactor[] interactors;
+    public InteractorItem[] interactors;
 
     protected override void Awake()
     {
@@ -17,9 +17,9 @@ public class TodoListManager : MonoSingleton<TodoListManager>
         plantVariable.Value = 0;
         trashVariable.Value = 0;
 
-        interactors = FindObjectsByType<Interactor>(FindObjectsSortMode.None);
+        interactors = FindObjectsByType<InteractorItem>(FindObjectsSortMode.None);
 
-        foreach (Interactor interactor in interactors)
+        foreach (InteractorItem interactor in interactors)
         {
             if (interactor.variable == plantVariable)
             {
