@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: dark_Wood_19-128x128
+  m_Name: brick_4_diff_4k 1
   m_Shader: {fileID: -6465566751694194690, guid: cc66e9f6a7b1abb449c1df73bf9b28cf, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: ee64ebe0b9ce1254d8573ff77405856e, type: 3}
+        m_Texture: {fileID: 2800000, guid: e05c2c660b09e3e43801c3bddc63a481, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -49,7 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ee64ebe0b9ce1254d8573ff77405856e, type: 3}
+        m_Texture: {fileID: 2800000, guid: e05c2c660b09e3e43801c3bddc63a481, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -112,6 +112,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
+    - _Tile: 0.5
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
@@ -121,7 +122,7 @@ Material:
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &4023029897191901299
+--- !u!114 &1357614920594400442
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
