@@ -1,4 +1,5 @@
-﻿using JSAM;
+﻿using System;
+using JSAM;
 using UnityEngine;
 
 public class Conteneur : MonoBehaviour, IUsable
@@ -6,10 +7,14 @@ public class Conteneur : MonoBehaviour, IUsable
     public ItemData ItemData;
     public SoundFileObject lockSound;
 
+    public event Action OnUse;
+
     public void Use()
     {
-        TodoListManager.Instance.Clear(ItemData);
+        if (!Inventory.Instance.Contains(ItemData)) return;
         lockSound?.Play(transform.position);
+        OnUse?.Invoke();
+        // Inventory.Instance.ClearItem(ItemData);
     }
 
     public void ExitUse()

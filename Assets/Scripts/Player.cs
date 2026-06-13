@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Player : MonoSingleton<Player>
+public class Player : SceneSingleton<Player>
 {
     private void OnTriggerEnter(Collider other)
     {

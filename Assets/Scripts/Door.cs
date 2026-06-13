@@ -19,6 +19,15 @@ public class Door : MonoBehaviour, IUsable
     public SoundFileObject openSound;
     public SoundFileObject lockSound;
 
+    public event Action<DoorUseState> OnUse;
+
+    public enum DoorUseState
+    {
+        Fail,
+        Locked,
+        Success
+    }
+
     private void Awake()
     {
         if (Destination == null) return;
@@ -29,11 +38,17 @@ public class Door : MonoBehaviour, IUsable
 
     public void Use()
     {
-        if (countdown) return;
+        if (countdown)
+        {
+            OnUse?.Invoke(DoorUseState.Fail);
+            return;
+        }
+
         if (Destination == null)
         {
             CenterMessage.Instance.PublishMessage("La porte est bloquée");
             if (lockSound) lockSound.Play(transform.position);
+            OnUse?.Invoke(DoorUseState.Locked);
             return;
         }
 
@@ -41,11 +56,13 @@ public class Door : MonoBehaviour, IUsable
         {
             CenterMessage.Instance.PublishMessage("Une clé est nécessaire");
             if (lockSound) lockSound.Play(transform.position);
+            OnUse?.Invoke(DoorUseState.Locked);
             return;
         }
 
         Destination.GoTo();
         if (openSound) openSound.Play(transform.position);
+        OnUse?.Invoke(DoorUseState.Success);
     }
 
     public void ExitUse()

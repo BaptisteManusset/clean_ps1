@@ -2,7 +2,7 @@
 using TMPro;
 using UnityEngine;
 
-public class CenterMessage : MonoSingleton<CenterMessage>
+public class CenterMessage : SceneSingleton<CenterMessage>
 {
     private TMP_Text label;
 

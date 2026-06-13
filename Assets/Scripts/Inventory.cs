@@ -1,17 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoSingleton<Inventory>
+public class Inventory : SceneSingleton<Inventory>
 {
-    Dictionary<ItemData, int> items = new Dictionary<ItemData, int>();
+    Dictionary<ItemData, int> items = new();
+
+    public event Action<int> OnAddItem;
+    public event Action OnClearItem;
+    public event Action OnChange;
 
 
-    public void AddItem(ItemData item, int a_count)
+    public void AddItem(ItemData item, int count = 1)
     {
-        if (!items.TryAdd(item, a_count))
+        if (!items.TryAdd(item, count))
         {
-            items[item] += a_count;
+            items[item] += count;
         }
+
+        OnAddItem?.Invoke(items[item]);
+        OnChange?.Invoke();
     }
 
     private void OnGUI()
@@ -23,7 +31,7 @@ public class Inventory : MonoSingleton<Inventory>
             list += $" {keyValuePair.Key.name} {keyValuePair.Value}\n";
         }
 
-        GUI.Label(new Rect(10, 10, 100, 300),list);
+        GUI.Label(new Rect(10, 10, 100, 300), list);
     }
 
     public bool Contains(ItemData a_key)
@@ -31,9 +39,21 @@ public class Inventory : MonoSingleton<Inventory>
         return items.ContainsKey(a_key) && items[a_key] > 0;
     }
 
+    public int GetCount(ItemData a_key)
+    {
+        return items.GetValueOrDefault(a_key, 0);
+    }
+
     public void Decrease(ItemData a_key, int a_amount = 1)
     {
         items[a_key] -= a_amount;
-        items[a_key] = Mathf.Max(items[a_key], 0);   
+        items[a_key] = Mathf.Max(items[a_key], 0);
+    }
+
+    public void ClearItem(ItemData itemData)
+    {
+        items[itemData] = 0;
+        OnClearItem?.Invoke();
+        OnChange?.Invoke();
     }
 }
