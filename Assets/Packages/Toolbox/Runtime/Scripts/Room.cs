@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [SelectionBase]
-public class AutoSelect : MonoBehaviour
+public class Room : MonoBehaviour
 {
     private void OnDrawGizmos()
     {

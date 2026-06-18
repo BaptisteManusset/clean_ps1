@@ -13,6 +13,8 @@ public class InteractorItem : MonoBehaviour, IUsable
 
     public SoundFileObject useSound;
 
+    public Zone current;
+
 
     public event Action Used;
 
@@ -20,6 +22,7 @@ public class InteractorItem : MonoBehaviour, IUsable
     {
         defaultVisual.SetActive(true);
         usedVisual.SetActive(false);
+        current = GetComponentInParent<Zone>();
 
         Library.Add(itemType);
     }

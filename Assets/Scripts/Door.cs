@@ -6,6 +6,7 @@ using Unity.AI.Navigation;
 using UnityEditor;
 using UnityEngine;
 
+[SelectionBase]
 public class Door : MonoBehaviour, IUsable
 {
     public ItemData key;
@@ -98,6 +99,7 @@ public class Door : MonoBehaviour, IUsable
             Gizmos.DrawLine(anchor.position, anchor.position + anchor.forward);
             Gizmos.color = new Color(0.31f, 0.85f, 1f);
             Gizmos.DrawLine(transform.position + Vector3.up, Destination.transform.position);
+            Gizmos.DrawWireSphere(Destination.anchor.position, .2f);
         }
     }
 
@@ -131,7 +133,7 @@ public class Door : MonoBehaviour, IUsable
         }
     }
 
-    private void SetOtherDoor(Door a_door)
+    public void SetOtherDoor(Door a_door)
     {
         Destination = a_door;
         if (MeshLink == null) MeshLink = GetComponent<NavMeshLink>();

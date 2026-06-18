@@ -20,7 +20,9 @@
 
     private void SetText()
     {
-        TodoListUI.Instance.SetText($"Trash: {Inventory.Instance.GetCount(itemType)}/{Library.GetCount(itemType)}");
+        string text = $"Trash: {Inventory.Instance.GetCount(itemType)}/{Library.GetCount(itemType)}\n";
+        
+        TodoListUI.Instance.SetText(text);
     }
 
     public override void Exit()
