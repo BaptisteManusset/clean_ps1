@@ -1643,6 +1643,20 @@ Transform:
   - {fileID: 2961594587146975277}
   - {fileID: 7009131242259514909}
   - {fileID: 7405826176584764765}
+  - {fileID: 3337986874629428726}
+  - {fileID: 3964565735356493620}
+  - {fileID: 3389060543372826982}
+  - {fileID: 3211551830347174029}
+  - {fileID: 8278384835971727097}
+  - {fileID: 3677807564358189365}
+  - {fileID: 9147975693689050228}
+  - {fileID: 8550337270342421717}
+  - {fileID: 8401775196904431704}
+  - {fileID: 9016577201017754991}
+  - {fileID: 3585835547986569058}
+  - {fileID: 2854879136261087935}
+  - {fileID: 2996922625785872706}
+  - {fileID: 295892663224463190}
   - {fileID: 7917065849812751736}
   - {fileID: 8836158896988104542}
   - {fileID: 2007414212558921742}
@@ -3853,6 +3867,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3109534497917427683, guid: 64d780f0afa3c354399f907570516287, type: 3}
   m_PrefabInstance: {fileID: 372575400900710042}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &406691889596016179
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2371598256400262843}
+    m_Modifications:
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 19.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986341476676623926, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_Name
+      value: lampadaire wal (19)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+--- !u!4 &2854879136261087935 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+  m_PrefabInstance: {fileID: 406691889596016179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &453572757618118118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4774,6 +4850,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7701117777178618110, guid: 9631b7175bfd2d1419a0c1f40b8c9a92, type: 3}
   m_PrefabInstance: {fileID: 836176851261320931}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &841461004418106830
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2371598256400262843}
+    m_Modifications:
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.019
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986341476676623926, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_Name
+      value: lampadaire wal (20)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+--- !u!4 &2996922625785872706 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+  m_PrefabInstance: {fileID: 841461004418106830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &871757120900605347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4964,6 +5102,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3109534497917427683, guid: 64d780f0afa3c354399f907570516287, type: 3}
   m_PrefabInstance: {fileID: 880599114142847719}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &894144898332561786
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2371598256400262843}
+    m_Modifications:
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 59.50001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.3539734
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986341476676623926, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_Name
+      value: lampadaire wal (15)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+--- !u!4 &3337986874629428726 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+  m_PrefabInstance: {fileID: 894144898332561786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &930113746324179244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5087,6 +5287,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
   m_PrefabInstance: {fileID: 937481097510922198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &950842224015613418
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2371598256400262843}
+    m_Modifications:
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 76.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.35396743
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986341476676623926, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_Name
+      value: lampadaire wal (23)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+--- !u!4 &3389060543372826982 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+  m_PrefabInstance: {fileID: 950842224015613418}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &993112701183769269
 PrefabInstance:
@@ -5273,6 +5535,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 9170637275202781265, guid: 55b6fa4319f4eae4fb3b6364456c1fe0, type: 3}
   m_PrefabInstance: {fileID: 1039502482796553707}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1057207039517414401
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2371598256400262843}
+    m_Modifications:
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 96.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.3539598
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986341476676623926, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_Name
+      value: lampadaire wal (24)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+--- !u!4 &3211551830347174029 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+  m_PrefabInstance: {fileID: 1057207039517414401}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1083480293589015476
 PrefabInstance:
@@ -5624,6 +5948,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6016900387872311108, guid: 359b7792918ee104ca0b68d0050977a0, type: 3}
   m_PrefabInstance: {fileID: 1232474375849625211}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1238629616104736185
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2371598256400262843}
+    m_Modifications:
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 108.99998
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.3539555
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986341476676623926, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_Name
+      value: lampadaire wal (26)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+--- !u!4 &3677807564358189365 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+  m_PrefabInstance: {fileID: 1238629616104736185}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1239195889414444999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5702,6 +6088,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4008770649309185851, guid: da4123aaae06f4f47817f04621cf1e2d, type: 3}
   m_PrefabInstance: {fileID: 1239195889414444999}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1439250834169144302
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2371598256400262843}
+    m_Modifications:
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 29.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986341476676623926, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_Name
+      value: lampadaire wal (18)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+--- !u!4 &3585835547986569058 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+  m_PrefabInstance: {fileID: 1439250834169144302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1447753644822909482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5775,6 +6223,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8839476248383657322, guid: 23ee078b69ee0de4aada0d44ae677181, type: 3}
   m_PrefabInstance: {fileID: 1447753644822909482}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1530866443132398520
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2371598256400262843}
+    m_Modifications:
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 67.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.3539703
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986341476676623926, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_Name
+      value: lampadaire wal (22)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+--- !u!4 &3964565735356493620 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+  m_PrefabInstance: {fileID: 1530866443132398520}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1561518505763671938
 PrefabInstance:
@@ -8349,6 +8859,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4008770649309185851, guid: da4123aaae06f4f47817f04621cf1e2d, type: 3}
   m_PrefabInstance: {fileID: 2732355671720600370}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2747606593007807450
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2371598256400262843}
+    m_Modifications:
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986341476676623926, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_Name
+      value: lampadaire wal (21)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+--- !u!4 &295892663224463190 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+  m_PrefabInstance: {fileID: 2747606593007807450}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2782994042503995555
 PrefabInstance:
@@ -14004,6 +14576,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9170637275202781265, guid: 55b6fa4319f4eae4fb3b6364456c1fe0, type: 3}
   m_PrefabInstance: {fileID: 5799715754376983692}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5825676913341905525
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2371598256400262843}
+    m_Modifications:
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 102.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.353958
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986341476676623926, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_Name
+      value: lampadaire wal (25)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+--- !u!4 &8278384835971727097 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+  m_PrefabInstance: {fileID: 5825676913341905525}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5857086103253362649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14658,6 +15292,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
   m_PrefabInstance: {fileID: 6045760085925644946}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6094121393965238361
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2371598256400262843}
+    m_Modifications:
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 125.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.3539498
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986341476676623926, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_Name
+      value: lampadaire wal (28)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+--- !u!4 &8550337270342421717 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+  m_PrefabInstance: {fileID: 6094121393965238361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6098787282256932833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15019,6 +15715,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7488134814946757468, guid: d7e85c61a8269e847912acf3481a70bb, type: 3}
   m_PrefabInstance: {fileID: 6225000535243924914}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6242929622784025812
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2371598256400262843}
+    m_Modifications:
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 49.50001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.3539734
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986341476676623926, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_Name
+      value: lampadaire wal (16)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+--- !u!4 &8401775196904431704 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+  m_PrefabInstance: {fileID: 6242929622784025812}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6252673663285655809
 PrefabInstance:
@@ -16088,6 +16846,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1911664325420515113, guid: fcad3cc143b486241abdd1824b16374e, type: 3}
   m_PrefabInstance: {fileID: 6601402754324840162}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6687403444344279288
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2371598256400262843}
+    m_Modifications:
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 116.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.3539526
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986341476676623926, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_Name
+      value: lampadaire wal (27)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+--- !u!4 &9147975693689050228 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+  m_PrefabInstance: {fileID: 6687403444344279288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6696108045048215249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16335,6 +17155,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3109534497917427683, guid: 64d780f0afa3c354399f907570516287, type: 3}
   m_PrefabInstance: {fileID: 6828547291872544396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6853102447782498787
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2371598256400262843}
+    m_Modifications:
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 39.50001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.35401917
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986341476676623926, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+      propertyPath: m_Name
+      value: lampadaire wal (17)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+--- !u!4 &9016577201017754991 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2466368875242128524, guid: 8f2b249172d1e12448f3214807f08a50, type: 3}
+  m_PrefabInstance: {fileID: 6853102447782498787}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6875356640486133512
 PrefabInstance:
