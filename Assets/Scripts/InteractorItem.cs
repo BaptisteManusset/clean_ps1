@@ -20,11 +20,9 @@ public class InteractorItem : MonoBehaviour, IUsable
 
     private void Awake()
     {
-        defaultVisual.SetActive(true);
-        usedVisual.SetActive(false);
+        ResetState();
         current = GetComponentInParent<Zone>();
-
-        Library.Add(itemType);
+        Library.Add(this);
     }
 
     public void Use()
@@ -49,6 +47,13 @@ public class InteractorItem : MonoBehaviour, IUsable
         if (!Application.isPlaying) return;
         Gizmos.color = count != 0 ? Color.red : Color.green;
         Gizmos.DrawCube(transform.position, Vector3.one);
+    }
+
+    public void ResetState()
+    {
+        defaultVisual.SetActive(true);
+        usedVisual.SetActive(false);
+        count = 1;
     }
 }
 

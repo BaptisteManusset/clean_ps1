@@ -1,23 +1,27 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GoToCollegeState : SimpleState
 {
     [SerializeField]
     private Door[] Doors;
+    
 
-    private void Awake()
+    public override void Enter()
     {
         foreach (Door door in Doors)
         {
             door.OnUse += OnUse;
         }
+        
+        base.Enter();
+    
+        TodoListUI.Instance.SetText("Dirigez vous vers le batiment");
     }
 
-    public override void Enter()
+    public override void Exit()
     {
-        base.Enter();
-        TodoListUI.Instance.SetText("Dirigez vous vers le batiment");
+        Release();
+        base.Exit();
     }
 
     private void Release()
@@ -27,6 +31,7 @@ public class GoToCollegeState : SimpleState
             door.OnUse -= OnUse;
         }
     }
+
 
     private void OnUse(Door.DoorUseState doorUseState)
     {
