@@ -2,6 +2,8 @@
 
 public class Player : SceneSingleton<Player>
 {
+    public Camera Cam;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent(out IUsable item))

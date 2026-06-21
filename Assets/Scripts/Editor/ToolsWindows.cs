@@ -41,11 +41,11 @@ public class ToolsWindows : EditorWindow
 
             using (new GUILayout.HorizontalScope())
             {
-                if (GUILayout.Button("Round L Pos"))
+                if (GUILayout.Button("Round scale"))
                 {
                     foreach (GameObject gameObject in Selection.gameObjects)
                     {
-                        gameObject.transform.localPosition = gameObject.transform.localPosition.Round();
+                        gameObject.transform.localScale = gameObject.transform.localScale.Round();
                         EditorUtility.SetDirty(gameObject.transform);
                     }
                 }

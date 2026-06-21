@@ -51,11 +51,15 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: ba25a9912cf875147ad4e67d95b1e845, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 57f9148bdb9117f42ac5f37d0543d3bb, type: 2}
+      objectReference: {fileID: 2100000, guid: 92483476621037c45a9d11af1af248af, type: 2}
     - target: {fileID: -1386234524299453898, guid: ba25a9912cf875147ad4e67d95b1e845, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 4316455788565346, guid: ba25a9912cf875147ad4e67d95b1e845, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e2c3409fad431e046b9b96b56630a94d, type: 2}
     - target: {fileID: 919132149155446097, guid: ba25a9912cf875147ad4e67d95b1e845, type: 3}
       propertyPath: m_Name
       value: but_foot

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3261842823615560267}
+  - component: {fileID: 7104812214374227182}
   m_Layer: 0
   m_Name: Locale poubelle
   m_TagString: Untagged
@@ -45,6 +46,18 @@ Transform:
   - {fileID: 232477068285779611}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7104812214374227182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030289735801592923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ea4a58169e4645a65988e226f6eba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &148469665195058209
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -117,6 +117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3343308954841347546}
+  - component: {fileID: 3437822693413822886}
   m_Layer: 0
   m_Name: cafet
   m_TagString: Untagged
@@ -162,6 +163,18 @@ Transform:
   - {fileID: 9072637386457784594}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3437822693413822886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8588093015749569932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ea4a58169e4645a65988e226f6eba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &175720412957287557
 PrefabInstance:
   m_ObjectHideFlags: 0

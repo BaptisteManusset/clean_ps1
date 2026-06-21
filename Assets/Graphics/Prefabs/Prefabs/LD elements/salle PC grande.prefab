@@ -114,6 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 230820414353644108}
+  - component: {fileID: 1320375651306979669}
   m_Layer: 0
   m_Name: salle PC grande
   m_TagString: Untagged
@@ -140,6 +141,18 @@ Transform:
   - {fileID: 4530164540951799491}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1320375651306979669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5834970118518285816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ea4a58169e4645a65988e226f6eba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9212063123615480922
 GameObject:
   m_ObjectHideFlags: 0
