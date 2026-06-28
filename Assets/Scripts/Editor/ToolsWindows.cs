@@ -123,6 +123,12 @@ public class ToolsWindows : EditorWindow
             GUILayout.FlexibleSpace();
             using (new GUILayout.HorizontalScope())
             {
+                EditorGUILayout.LabelField("state",
+                    GameManager.Instance ? GameManager.Instance.DayStatemachine.CurrentState.ToString() : "Undefined");
+            }
+
+            using (new GUILayout.HorizontalScope())
+            {
                 GUILayout.Label("Items", EditorStyles.boldLabel);
                 GUILayout.FlexibleSpace();
                 if (GUILayout.Button("Scan"))

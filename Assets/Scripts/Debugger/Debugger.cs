@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -44,3 +45,4 @@ public class Debugger : MonoBehaviour
         }
     }
 }
+#endif

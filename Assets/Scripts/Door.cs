@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using JSAM;
 using Unity.AI.Navigation;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 [SelectionBase]
@@ -84,6 +86,7 @@ public class Door : MonoBehaviour, IUsable
         yield return new WaitForSecondsRealtime(1f);
         countdown = false;
     }
+#if UNITY_EDITOR
 
     private void OnDrawGizmos()
     {
@@ -139,4 +142,5 @@ public class Door : MonoBehaviour, IUsable
         if (MeshLink == null) MeshLink = GetComponent<NavMeshLink>();
         MeshLink.endTransform = Destination.anchor;
     }
+#endif
 }
