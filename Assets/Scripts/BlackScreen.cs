@@ -14,24 +14,25 @@ public class BlackScreen : SceneSingleton<BlackScreen>
 
     private void Start()
     {
+        image.enabled = false;
     }
 
-    [EditorButton]
-    public void Black()
-    {
-        OnFadeStart?.Invoke();
-        image.DOFade(1, duration).SetEase(ease);
-        OnFadeOpaque?.Invoke();
-        OnFadeEnd?.Invoke();
-    }
-
-    [EditorButton]
-    public void Clear()
-    {
-        OnFadeStart?.Invoke();
-        image.DOFade(0, duration).SetEase(ease);
-        OnFadeEnd?.Invoke();
-    }
+    // [EditorButton]
+    // public void Black()
+    // {
+    //     OnFadeStart?.Invoke();
+    //     image.DOFade(1, duration).SetEase(ease);
+    //     OnFadeOpaque?.Invoke();
+    //     OnFadeEnd?.Invoke();
+    // }
+    //
+    // [EditorButton]
+    // public void Clear()
+    // {
+    //     OnFadeStart?.Invoke();
+    //     image.DOFade(0, duration).SetEase(ease);
+    //     OnFadeEnd?.Invoke();
+    // }
 
     [EditorButton]
     public void Fade()
@@ -39,10 +40,12 @@ public class BlackScreen : SceneSingleton<BlackScreen>
         Sequence sequence = DOTween.Sequence();
 
         OnFadeStart?.Invoke();
+        sequence.AppendCallback(() => { image.enabled = true; });
         sequence.Append(image.DOFade(1, duration).SetEase(ease));
         sequence.AppendCallback(() => { OnFadeOpaque?.Invoke(); });
         sequence.AppendInterval(duration);
         sequence.Append(image.DOFade(0, duration).SetEase(ease));
+        sequence.AppendCallback(() => { image.enabled = false; });
         OnFadeEnd?.Invoke();
     }
 }

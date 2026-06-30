@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ToolsWindows : EditorWindow
 {
@@ -50,11 +51,39 @@ public class ToolsWindows : EditorWindow
                     }
                 }
 
+                if (GUILayout.Button("Wiggle scale"))
+                {
+                    foreach (GameObject gameObject in Selection.gameObjects)
+                    {
+                        gameObject.transform.localScale = Vector3.one * Random.Range(0.8f, 1.2f);
+                        EditorUtility.SetDirty(gameObject.transform);
+                    }
+                }
+
                 if (GUILayout.Button("Round Pos"))
                 {
                     foreach (GameObject gameObject in Selection.gameObjects)
                     {
                         gameObject.transform.position = gameObject.transform.position.Round();
+                        EditorUtility.SetDirty(gameObject.transform);
+                    }
+                }
+
+                if (GUILayout.Button("Wiggle Rot"))
+                {
+                    foreach (GameObject gameObject in Selection.gameObjects)
+                    {
+                        gameObject.transform.localEulerAngles =
+                            new Vector3(0, Random.Range(-10, 10), Random.Range(-10, 10));
+                        EditorUtility.SetDirty(gameObject.transform);
+                    }
+                }
+
+                if (GUILayout.Button("Reset Rot"))
+                {
+                    foreach (GameObject gameObject in Selection.gameObjects)
+                    {
+                        gameObject.transform.localEulerAngles = Vector3.zero;
                         EditorUtility.SetDirty(gameObject.transform);
                     }
                 }
@@ -121,10 +150,22 @@ public class ToolsWindows : EditorWindow
             }
 
             GUILayout.FlexibleSpace();
+            if (GUILayout.Button("TP player") && Application.isPlaying)
+            {
+                Player.Instance.Teleport(SceneView.lastActiveSceneView.camera.transform);
+                Player.Instance.transform.eulerAngles = Vector3.forward;
+            }
+
+            GUILayout.FlexibleSpace();
             using (new GUILayout.HorizontalScope())
             {
                 EditorGUILayout.LabelField("state",
                     GameManager.Instance ? GameManager.Instance.DayStatemachine.CurrentState.ToString() : "Undefined");
+                
+                if (GUILayout.Button("Next") && Application.isPlaying)
+                {
+                    GameManager.Instance.DayStatemachine.NextState();
+                }
             }
 
             using (new GUILayout.HorizontalScope())
