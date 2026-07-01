@@ -57,6 +57,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 57f9148bdb9117f42ac5f37d0543d3bb, type: 2}
     - target: {fileID: -5122287270029592220, guid: d9bda168765979247b32940159a1d040, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -5122287270029592220, guid: d9bda168765979247b32940159a1d040, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -69,12 +73,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 297383959100031093, guid: d9bda168765979247b32940159a1d040, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 297383959100031093, guid: d9bda168765979247b32940159a1d040, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d9bda168765979247b32940159a1d040, type: 3}
       propertyPath: m_Name
       value: stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9bda168765979247b32940159a1d040, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d9bda168765979247b32940159a1d040, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -88,6 +100,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: d75f8f9b6dbfc4247b2e8fe5c7807dae, type: 2}
+    - target: {fileID: 6329867290311459219, guid: d9bda168765979247b32940159a1d040, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6329867290311459219, guid: d9bda168765979247b32940159a1d040, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647

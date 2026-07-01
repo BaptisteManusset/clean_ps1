@@ -57,6 +57,10 @@ PrefabInstance:
       value: wall_corner
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc2cb037f9168ba4896da3999346deed, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc2cb037f9168ba4896da3999346deed, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}

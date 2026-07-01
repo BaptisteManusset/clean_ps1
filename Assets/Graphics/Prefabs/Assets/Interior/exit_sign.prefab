@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2808588821032957708}
   - component: {fileID: 1575442610536503868}
   - component: {fileID: 8927234073555408240}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,6 +176,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aa50756bbdae4ac479bb8a745fea11e3, type: 3}
       propertyPath: m_Name
       value: exit_sign
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa50756bbdae4ac479bb8a745fea11e3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aa50756bbdae4ac479bb8a745fea11e3, type: 3}
       propertyPath: m_StaticEditorFlags

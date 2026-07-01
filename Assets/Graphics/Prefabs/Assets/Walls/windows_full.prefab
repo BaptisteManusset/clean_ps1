@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5359168277664090476}
   - component: {fileID: 4014366944577480652}
   - component: {fileID: 2831704749665255259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 'Point Light '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,6 +184,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 05d97527a96b3c8449a63a087004f4f1, type: 3}
       propertyPath: m_Name
       value: windows_full
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 05d97527a96b3c8449a63a087004f4f1, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

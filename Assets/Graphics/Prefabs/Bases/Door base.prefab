@@ -82,7 +82,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: {fileID: 0}
   anchor: {fileID: 4199995088409171810}
-  Destination: {fileID: 0}
   Getter: {fileID: 442964809096149261}
   MeshLink: {fileID: 2985029696792219596}
   openSound: {fileID: 11400000, guid: c4ed54d994bdd6e40ae60ecbf5f3247c, type: 2}
@@ -125,7 +124,7 @@ MonoBehaviour:
   m_AgentTypeID: 0
   m_StartPoint: {x: 0, y: 0, z: -2.5}
   m_EndPoint: {x: 0, y: 0, z: 2.5}
-  m_StartTransform: {fileID: 0}
+  m_StartTransform: {fileID: 4199995088409171810}
   m_EndTransform: {fileID: 0}
   m_Activated: 1
   m_Width: 0
@@ -147,6 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Destination: {fileID: 0}
+  RuledDestinations:
+    _serializedList: []
 --- !u!1 &4084913421541755605
 GameObject:
   m_ObjectHideFlags: 0

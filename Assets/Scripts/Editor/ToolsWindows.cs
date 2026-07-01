@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 public class ToolsWindows : EditorWindow
@@ -37,6 +38,17 @@ public class ToolsWindows : EditorWindow
                 {
                     doors[i].SetOtherDoor(doors[(i + 1) % doors.Count]);
                     EditorUtility.SetDirty(doors[i]);
+                }
+            }
+
+
+            if (GUILayout.Button("Set door names"))
+            {
+                Room[] rooms = FindObjectsByType<Room>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+                foreach (Room room in rooms)
+                {
+                    room.SetDoorsNames();
                 }
             }
 
@@ -161,7 +173,7 @@ public class ToolsWindows : EditorWindow
             {
                 EditorGUILayout.LabelField("state",
                     GameManager.Instance ? GameManager.Instance.DayStatemachine.CurrentState.ToString() : "Undefined");
-                
+
                 if (GUILayout.Button("Next") && Application.isPlaying)
                 {
                     GameManager.Instance.DayStatemachine.NextState();

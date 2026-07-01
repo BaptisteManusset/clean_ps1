@@ -11,12 +11,12 @@ public class DayComparationGroup
     {
         return Comparation switch
         {
-            DayFeedbackComparation.Equal => Day == currentDay,
-            DayFeedbackComparation.NotEqual => Day != currentDay,
-            DayFeedbackComparation.Less => Day < currentDay,
-            DayFeedbackComparation.LessOrEqual => Day <= currentDay,
+            DayFeedbackComparation.Equal => currentDay == Day,
+            DayFeedbackComparation.NotEqual => currentDay != Day,
+            DayFeedbackComparation.Less => currentDay < Day,
+            DayFeedbackComparation.LessOrEqual => currentDay <= Day,
             DayFeedbackComparation.More => Day > currentDay,
-            DayFeedbackComparation.MoreOrEqual => Day >= currentDay,
+            DayFeedbackComparation.MoreOrEqual => currentDay >= Day,
             DayFeedbackComparation.Always => true,
             DayFeedbackComparation.Never => false,
             _ => false
