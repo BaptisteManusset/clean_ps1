@@ -82,7 +82,7 @@ public class Door : MonoBehaviour, IUsable
 
     private void GoTo()
     {
-        Player.Instance.Teleport(Getter.Get().anchor);
+        Player.Instance.Teleport(anchor);
         StartCoroutine(PlayingCountdown());
     }
 
