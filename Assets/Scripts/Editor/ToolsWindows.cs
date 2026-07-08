@@ -20,24 +20,48 @@ public class ToolsWindows : EditorWindow
     {
         using (new GUILayout.VerticalScope())
         {
-            if (GUILayout.Button("Link Doors", GUILayout.Height(EditorGUIUtility.singleLineHeight * 2)))
+            using (new GUILayout.HorizontalScope(GUILayout.Height(EditorGUIUtility.singleLineHeight * 2)))
             {
-                if (Selection.gameObjects.Length <= 1) return;
-                List<Door> doors = new();
-
-                foreach (GameObject gameObject in Selection.gameObjects)
+                if (GUILayout.Button("Link Doors", GUILayout.ExpandHeight(true)))
                 {
-                    Door door = gameObject.GetComponentInChildren<Door>(true);
-                    if (door)
+                    if (Selection.gameObjects.Length <= 1) return;
+                    List<Door> doors = new();
+
+                    foreach (GameObject gameObject in Selection.gameObjects)
                     {
-                        doors.Add(door);
+                        Door door = gameObject.GetComponentInChildren<Door>(true);
+                        if (door)
+                        {
+                            doors.Add(door);
+                        }
+                    }
+
+                    for (int i = 0; i < doors.Count; i++)
+                    {
+                        doors[i].SetOtherDoor(doors[(i + 1) % doors.Count]);
+                        EditorUtility.SetDirty(doors[i]);
                     }
                 }
 
-                for (int i = 0; i < doors.Count; i++)
+                if (GUILayout.Button("🎲", GUILayout.ExpandHeight(true), GUILayout.MaxWidth(60)))
                 {
-                    doors[i].SetOtherDoor(doors[(i + 1) % doors.Count]);
-                    EditorUtility.SetDirty(doors[i]);
+                    if (Selection.gameObjects.Length <= 1) return;
+                    List<Door> doors = new();
+
+                    foreach (GameObject gameObject in Selection.gameObjects)
+                    {
+                        Door door = gameObject.GetComponentInChildren<Door>(true);
+                        if (door)
+                        {
+                            doors.Add(door);
+                        }
+                    }
+
+                    for (int i = 0; i < doors.Count; i++)
+                    {
+                        doors[i].SetOtherDoor(doors[(i + 1) % doors.Count], true);
+                        EditorUtility.SetDirty(doors[i]);
+                    }
                 }
             }
 
@@ -65,39 +89,27 @@ public class ToolsWindows : EditorWindow
 
                 if (GUILayout.Button("Wiggle scale"))
                 {
-                    foreach (GameObject gameObject in Selection.gameObjects)
-                    {
-                        gameObject.transform.localScale = Vector3.one * Random.Range(0.8f, 1.2f);
-                        EditorUtility.SetDirty(gameObject.transform);
-                    }
+                    WiggleScale();
                 }
 
                 if (GUILayout.Button("Round Pos"))
                 {
-                    foreach (GameObject gameObject in Selection.gameObjects)
-                    {
-                        gameObject.transform.position = gameObject.transform.position.Round();
-                        EditorUtility.SetDirty(gameObject.transform);
-                    }
+                    RoundPosition();
                 }
 
-                if (GUILayout.Button("Wiggle Rot"))
+                if (GUILayout.Button("Wiggle Rot YZ"))
                 {
-                    foreach (GameObject gameObject in Selection.gameObjects)
-                    {
-                        gameObject.transform.localEulerAngles =
-                            new Vector3(0, Random.Range(-10, 10), Random.Range(-10, 10));
-                        EditorUtility.SetDirty(gameObject.transform);
-                    }
+                    WiggleRotation(new Vector3(0, Random.Range(-10, 10), Random.Range(-10, 10)));
+                }
+
+                if (GUILayout.Button("Wiggle Rot Y"))
+                {
+                    WiggleRotation(new Vector3(0, Random.Range(-10, 10), 0));
                 }
 
                 if (GUILayout.Button("Reset Rot"))
                 {
-                    foreach (GameObject gameObject in Selection.gameObjects)
-                    {
-                        gameObject.transform.localEulerAngles = Vector3.zero;
-                        EditorUtility.SetDirty(gameObject.transform);
-                    }
+                    ResetRotation();
                 }
             }
 
@@ -106,58 +118,34 @@ public class ToolsWindows : EditorWindow
             {
                 if (GUILayout.Button("-180"))
                 {
-                    foreach (GameObject gameObject in Selection.gameObjects)
-                    {
-                        gameObject.transform.localEulerAngles += new Vector3(0, -180, 0);
-                        EditorUtility.SetDirty(gameObject.transform);
-                    }
+                    IncreaseRotation(new Vector3(0, -180, 0));
                 }
 
                 if (GUILayout.Button("-90"))
                 {
-                    foreach (GameObject gameObject in Selection.gameObjects)
-                    {
-                        gameObject.transform.localEulerAngles += new Vector3(0, -90, 0);
-                        EditorUtility.SetDirty(gameObject.transform);
-                    }
+                    IncreaseRotation(new Vector3(0, -90, 0));
                 }
 
 
                 if (GUILayout.Button("-45"))
                 {
-                    foreach (GameObject gameObject in Selection.gameObjects)
-                    {
-                        gameObject.transform.localEulerAngles += new Vector3(0, -45, 0);
-                        EditorUtility.SetDirty(gameObject.transform);
-                    }
-                }
-
-                if (GUILayout.Button("0"))
-                {
-                    foreach (GameObject gameObject in Selection.gameObjects)
-                    {
-                        gameObject.transform.localEulerAngles = new Vector3(0, 0, 0);
-                        EditorUtility.SetDirty(gameObject.transform);
-                    }
+                    IncreaseRotation(new Vector3(0, -45, 0));
                 }
 
 
-                if (GUILayout.Button("+45"))
+                if (GUILayout.Button("45"))
                 {
-                    foreach (GameObject gameObject in Selection.gameObjects)
-                    {
-                        gameObject.transform.localEulerAngles += new Vector3(0, 45, 0);
-                        EditorUtility.SetDirty(gameObject.transform);
-                    }
+                    IncreaseRotation(new Vector3(0, 45, 0));
                 }
 
-                if (GUILayout.Button("+180"))
+                if (GUILayout.Button("90"))
                 {
-                    foreach (GameObject gameObject in Selection.gameObjects)
-                    {
-                        gameObject.transform.localEulerAngles += new Vector3(0, 180, 0);
-                        EditorUtility.SetDirty(gameObject.transform);
-                    }
+                    IncreaseRotation(new Vector3(0, 90, 0));
+                }
+
+                if (GUILayout.Button("180"))
+                {
+                    IncreaseRotation(new Vector3(0, 180, 0));
                 }
             }
 
@@ -214,6 +202,51 @@ public class ToolsWindows : EditorWindow
         }
     }
 
+    private static void IncreaseRotation(Vector3 angleAdded)
+    {
+        foreach (GameObject gameObject in Selection.gameObjects)
+        {
+            Undo.RecordObject(gameObject.transform, "Increase rotation");
+            gameObject.transform.localEulerAngles += angleAdded;
+        }
+    }
+
+    private static void WiggleScale()
+    {
+        foreach (GameObject gameObject in Selection.gameObjects)
+        {
+            Undo.RecordObject(gameObject.transform, "Wiggle rotation");
+            gameObject.transform.localScale = Vector3.one * Random.Range(0.8f, 1.2f);
+        }
+    }
+
+    private static void RoundPosition()
+    {
+        foreach (GameObject gameObject in Selection.gameObjects)
+        {
+            Undo.RecordObject(gameObject.transform, "Round Position");
+            gameObject.transform.position = gameObject.transform.position.Round();
+        }
+    }
+
+    private static void ResetRotation()
+    {
+        foreach (GameObject gameObject in Selection.gameObjects)
+        {
+            Undo.RecordObject(gameObject.transform, "Reset rotation");
+            gameObject.transform.localEulerAngles = Vector3.zero;
+        }
+    }
+
+    private static void WiggleRotation(Vector3 newRotation)
+    {
+        foreach (GameObject gameObject in Selection.gameObjects)
+        {
+            Undo.RecordObject(gameObject.transform, "Wiggle rotation");
+            gameObject.transform.localEulerAngles = newRotation;
+        }
+    }
+
     private void ScanItems()
     {
         items = new List<InteractorItem>();
@@ -229,7 +262,7 @@ public class ToolsWindows : EditorWindow
         }
     }
 
-    List<InteractorItem> items = new();
+    private List<InteractorItem> items = new();
 
-    Dictionary<ItemData, int> counts = new();
+    private Dictionary<ItemData, int> counts = new();
 }

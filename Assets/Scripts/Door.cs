@@ -122,11 +122,21 @@ public class Door : MonoBehaviour, IUsable
         }
     }
 
-    public void SetOtherDoor(Door a_door)
+    public void SetOtherDoor(Door a_door, bool probability = false)
     {
-        Getter.Destination = a_door;
-        if (MeshLink == null) MeshLink = GetComponent<NavMeshLink>();
-        MeshLink.endTransform = Getter.Destination.anchor;
+        if (probability)
+        {
+            Getter.AddDoorToRule(a_door);
+        }
+        else
+        {
+            Getter.AddDoor(a_door);
+        }
+
+        if (MeshLink == null)
+        {
+            MeshLink = GetComponent<NavMeshLink>();
+        }
     }
 #endif
 }

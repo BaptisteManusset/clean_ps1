@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class DayComparationGroup
+public class DayCompareGroup
 {
     public int Day;
     public DayFeedbackComparation Comparation;

@@ -32,19 +32,38 @@ public class GetterElement
 
 public class DestinationGetter : MonoBehaviour
 {
-    public Door Destination;
+    [SerializeField]
+    private Door Destination;
 
 
-    public SerializedDictionary<DayComparationGroup, SerializedDictionary<Door, float>> RuledDestinations = new();
+    public SerializedDictionary<DayCompareGroup, SerializedDictionary<Door, float>> RuledDestinations = new();
 
     public Door Get() => Get(GameManager.Instance.DayStatemachine.currentDay);
+
+    public void AddDoorToRule(Door door, float probability = 1)
+    {
+        SerializedDictionary<Door, float> pair = new() { { door, probability } };
+        DayCompareGroup compare = new()
+        {
+            Comparation = DayFeedbackComparation.Never,
+            Day = 0
+        };
+        RuledDestinations.Add(compare, pair);
+
+        if (!Destination) AddDoor(door);
+    }
+
+    public void AddDoor(Door door)
+    {
+        Destination = door;
+    }
 
     public Door Get(int day)
     {
         Door door = Destination;
         if (RuledDestinations.Count == 0) return door;
 
-        foreach ((DayComparationGroup compare, SerializedDictionary<Door, float> value) in RuledDestinations)
+        foreach ((DayCompareGroup compare, SerializedDictionary<Door, float> value) in RuledDestinations)
         {
             if (!compare.IsValid(day)) continue;
 
@@ -57,11 +76,11 @@ public class DestinationGetter : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if(Destination == null) return;
+        if (Destination == null) return;
         Gizmos.DrawLine(transform.position, Destination.anchor.position);
 
         Gizmos.color = Color.gray;
-        
+
         foreach (var keyValuePair in RuledDestinations)
         {
             foreach (var valuePair in keyValuePair.Value)
