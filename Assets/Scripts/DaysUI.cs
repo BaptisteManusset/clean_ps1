@@ -8,17 +8,17 @@ public class DaysUI : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.DayStatemachine.DayChanged += OnDayChanged;
-        OnDayChanged();
+        GameManager.Instance.globalStatemachine.DayChanged += OnGlobalChanged;
+        OnGlobalChanged();
     }
 
     private void OnDestroy()
     {
-        if (GameManager.Instance) GameManager.Instance.DayStatemachine.DayChanged -= OnDayChanged;
+        if (GameManager.Instance) GameManager.Instance.globalStatemachine.DayChanged -= OnGlobalChanged;
     }
 
-    private void OnDayChanged()
+    private void OnGlobalChanged()
     {
-        text.text = $"jour:{GameManager.Instance.DayStatemachine.currentDay}";
+        text.text = $"jour:{GameManager.Instance.globalStatemachine.currentDay}";
     }
 }

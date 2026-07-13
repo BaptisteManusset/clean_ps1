@@ -24,7 +24,7 @@ public class Debugger : MonoBehaviour
 
     private void OnPerformed(InputAction.CallbackContext obj)
     {
-        debuggerData.AddEntry(DebuggerData.Entry.Create(Player.Instance));
+        debuggerData.AddEntry(DebuggerData.Entry.Create(GameManager.Instance.player));
         Debug.Log("New entry");
     }
 

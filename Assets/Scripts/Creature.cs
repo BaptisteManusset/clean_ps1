@@ -13,14 +13,14 @@ public class Creature : MonoBehaviour
 
     private void Start()
     {
-        m_agent.SetDestination(Player.Instance.transform.position);
+        m_agent.SetDestination(GameManager.Instance.player.transform.position);
     }
 
     private void Update()
     {
         if (m_agent.pathStatus == NavMeshPathStatus.PathComplete)
         {
-            m_agent.SetDestination(Player.Instance.transform.position);
+            m_agent.SetDestination(GameManager.Instance.player.transform.position);
         }
     }
 }

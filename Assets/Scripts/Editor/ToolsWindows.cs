@@ -152,19 +152,19 @@ public class ToolsWindows : EditorWindow
             GUILayout.FlexibleSpace();
             if (GUILayout.Button("TP player") && Application.isPlaying)
             {
-                Player.Instance.Teleport(SceneView.lastActiveSceneView.camera.transform);
-                Player.Instance.transform.eulerAngles = Vector3.forward;
+                GameManager.Instance.player.Teleport(SceneView.lastActiveSceneView.camera.transform);
+                GameManager.Instance.player.transform.eulerAngles = Vector3.forward;
             }
 
             GUILayout.FlexibleSpace();
             using (new GUILayout.HorizontalScope())
             {
                 EditorGUILayout.LabelField("state",
-                    GameManager.Instance ? GameManager.Instance.DayStatemachine.CurrentState.ToString() : "Undefined");
+                    GameManager.Instance ? GameManager.Instance.globalStatemachine.CurrentState.ToString() : "Undefined");
 
                 if (GUILayout.Button("Next") && Application.isPlaying)
                 {
-                    GameManager.Instance.DayStatemachine.NextState();
+                    GameManager.Instance.globalStatemachine.NextState();
                 }
             }
 

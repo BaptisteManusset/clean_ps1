@@ -38,7 +38,7 @@ public class DestinationGetter : MonoBehaviour
 
     public SerializedDictionary<DayCompareGroup, SerializedDictionary<Door, float>> RuledDestinations = new();
 
-    public Door Get() => Get(GameManager.Instance.DayStatemachine.currentDay);
+    public Door Get() => Get(GameManager.Instance.globalStatemachine.currentDay);
 
     public void AddDoorToRule(Door door, float probability = 1)
     {

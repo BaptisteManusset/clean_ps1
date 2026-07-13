@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 
-public class GoToCollegeState : SimpleState
+public class PassThrowDoorState : SimpleState
 {
+    [SerializeField]
+    private string textToDisplay = "Dirigez vous vers le batiment";
+    
     [SerializeField]
     private Door[] Doors;
     
@@ -14,8 +17,8 @@ public class GoToCollegeState : SimpleState
         }
         
         base.Enter();
-    
-        TodoListUI.Instance.SetText("Dirigez vous vers le batiment");
+
+        TodoListUI.Instance.SetText(textToDisplay);
     }
 
     public override void Exit()

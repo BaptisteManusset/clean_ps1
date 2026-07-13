@@ -25,8 +25,8 @@ public class DebuggerData : ScriptableObject
         {
             Entry instance = new()
             {
-                position = player.Cam.transform.position,
-                rotation = player.Cam.transform.rotation
+                position = GameManager.Instance.player.transform.position,
+                rotation = GameManager.Instance.Cam.transform.rotation
             };
 
             return instance;

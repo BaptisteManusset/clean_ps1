@@ -98,7 +98,7 @@ public class SimpleStateMachine : MonoBehaviour
     {
         if (m_isCompleted)
         {
-            Debug.Log("{GetType().Name} already completed");
+            Debug.Log($"{GetType().Name} in {gameObject.name} already completed",gameObject);
             return;
         }
 

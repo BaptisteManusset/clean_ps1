@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 #if UNITY_EDITOR
@@ -12,6 +13,8 @@ public class Room : MonoBehaviour
     [SerializeField] private List<Door> Doors = new();
 
     [SerializeField] private Bounds m_bounds = new(Vector3.zero, Vector3.zero);
+    public event Action<Room> OnEntered;
+    public event Action<Room> OnExisted;
 
     private void Reset()
     {
@@ -34,6 +37,8 @@ public class Room : MonoBehaviour
         {
             m_bounds.Encapsulate(collider.bounds);
         }
+
+        m_bounds.center -= transform.position;
     }
 
 #if UNITY_EDITOR
@@ -55,8 +60,8 @@ public class Room : MonoBehaviour
         }
 
         Gizmos.color = new Color(0.67f, 0.68f, 1f);
-        Gizmos.DrawWireCube(m_bounds.center, m_bounds.size);
-        Handles.Label(m_bounds.center, gameObject.name, EditorStyles.boldLabel);
+        Gizmos.DrawWireCube(m_bounds.center + transform.localPosition, m_bounds.size);
+        Handles.Label(m_bounds.center + transform.localPosition, gameObject.name, EditorStyles.boldLabel);
     }
 
     [EditorButton]

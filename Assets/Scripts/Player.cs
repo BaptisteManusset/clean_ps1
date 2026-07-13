@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
-public class Player : SceneSingleton<Player>
+public class Player : MonoBehaviour
 {
-    public Camera Cam;
     
     private void OnTriggerEnter(Collider other)
     {

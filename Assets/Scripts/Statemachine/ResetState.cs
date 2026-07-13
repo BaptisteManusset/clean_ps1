@@ -4,14 +4,13 @@
     {
         base.Enter();
         
-        BlackScreen.Instance.Fade();
-        DayStatemachine fsm = (DayStatemachine)m_stateMachine;
-        
-        fsm.IncreaseDay();
+        // BlackScreen.Instance.Fade();
+        GameManager.Instance.globalStatemachine.IncreaseDay();
 
         foreach (InteractorItem item in Library.GetAll())
         {
             item.ResetState();
         }
+        m_stateMachine.NextState();
     }
 }

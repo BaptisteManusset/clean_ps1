@@ -80,7 +80,7 @@ public class PlayerTriggerZone : MonoBehaviour
     //
     // protected virtual void Update()
     // {
-    //     if (Player.Instance == null)
+    //     if (GameManager.Instance.player == null)
     //     {
     //         if (m_isInside)
     //         {
@@ -89,7 +89,7 @@ public class PlayerTriggerZone : MonoBehaviour
     //         return;
     //     }
     //
-    //     bool isInside = GetIsInside(Player.Instance.transform.position);
+    //     bool isInside = GetIsInside(GameManager.Instance.player.transform.position);
     //
     //     if (m_isInside != isInside)
     //     {

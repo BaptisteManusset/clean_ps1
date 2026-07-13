@@ -1,20 +1,10 @@
-﻿using System;
 
-public class DayStatemachine : SimpleStateMachine
+public class DayStateMachine : SimpleStateMachine, SubStateMachine
 {
-    public int currentDay = 0;
-    public event Action DayChanged;
-
-    public SimpleState DefaultState;
-
-    private void OnEnable()
+    // [SerializeField] private SimpleState defaultState;
+    
+    public void StartDefaultState()
     {
-        ChangeState(DefaultState);
-    }
-
-    public void IncreaseDay()
-    {
-        currentDay++;
-        DayChanged?.Invoke();
+        NextState();
     }
 }

@@ -49,8 +49,8 @@ MonoBehaviour:
   Doors:
   - {fileID: 8899218859287444474}
   m_bounds:
-    m_Center: {x: 0.00000047683716, y: 1.4500002, z: -1}
-    m_Extent: {x: 2.2999973, y: 1.5500002, z: 3.2999964}
+    m_Center: {x: -1, y: 1.4500002, z: 0}
+    m_Extent: {x: 3.2999878, y: 1.5500002, z: 2.2999878}
 --- !u!1 &5098973935303466392
 GameObject:
   m_ObjectHideFlags: 0

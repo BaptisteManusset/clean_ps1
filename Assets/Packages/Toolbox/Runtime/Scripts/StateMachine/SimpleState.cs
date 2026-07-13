@@ -31,17 +31,17 @@ public abstract class SimpleState : MonoBehaviour, ISimpleState
 
     public virtual void Enter()
     {
+        Debug.Log("Enter" + gameObject.name, gameObject);
         gameObject.SetActive(true);
         m_started?.Invoke();
     }
 
     public virtual void Exit()
     {
+        Debug.Log("Exist" + gameObject.name);
         m_exited?.Invoke();
         gameObject.SetActive(false);
     }
 
     public virtual bool NextStateRequested() => true;
-
-
 }

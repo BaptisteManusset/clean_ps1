@@ -7,13 +7,13 @@ public class DayEnvironmentChanger : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.DayStatemachine.DayChanged += DayChanged;
-        DayChanged();
+        GameManager.Instance.globalStatemachine.DayChanged += GlobalChanged;
+        GlobalChanged();
     }
 
-    private void DayChanged()
+    private void GlobalChanged()
     {
-        int currentDay = GameManager.Instance.DayStatemachine.currentDay;
+        int currentDay = GameManager.Instance.globalStatemachine.currentDay;
         foreach (GameObjectData day in DayFeedbacks)
         {
             day.Execute(currentDay);

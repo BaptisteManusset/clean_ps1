@@ -34,12 +34,17 @@ public class Door : MonoBehaviour, IUsable
 
     private void Awake()
     {
-        if (Getter == null) return;
+        if (Getter == null)
+        {
+            Debug.LogWarning($"Missing Getter in {gameObject.name}",gameObject);
+            return;
+        }
         MeshLink = GetComponent<NavMeshLink>();
     }
 
     private void Start()
     {
+        if (Getter == null) return;
         Door door = Getter.Get();
         if (door) MeshLink.endTransform = door.anchor;
     }
@@ -82,7 +87,7 @@ public class Door : MonoBehaviour, IUsable
 
     private void GoTo()
     {
-        Player.Instance.Teleport(anchor);
+        GameManager.Instance.player.Teleport(anchor);
         StartCoroutine(PlayingCountdown());
     }
 
