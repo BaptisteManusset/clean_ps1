@@ -13,7 +13,7 @@ public class PassThrowDoorState : SimpleState
     {
         foreach (Door door in Doors)
         {
-            door.OnUse += OnUse;
+            door.OnUseDoor += OnUseDoor;
         }
         
         base.Enter();
@@ -31,12 +31,12 @@ public class PassThrowDoorState : SimpleState
     {
         foreach (Door door in Doors)
         {
-            door.OnUse -= OnUse;
+            door.OnUseDoor -= OnUseDoor;
         }
     }
 
 
-    private void OnUse(Door.DoorUseState doorUseState)
+    private void OnUseDoor(Door.DoorUseState doorUseState)
     {
         Release();
         m_stateMachine.NextState();

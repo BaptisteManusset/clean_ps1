@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2146894389507078253}
   - component: {fileID: 5165150399188309535}
   - component: {fileID: 4968148453154695697}
+  - component: {fileID: 4483416302656812761}
   m_Layer: 0
   m_Name: Creature
   m_TagString: Untagged
@@ -136,6 +137,20 @@ MonoBehaviour:
   blendDistance: 3
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 4f0cea7f0558f834bb4d1f2d193a7d8d, type: 2}
+--- !u!114 &4483416302656812761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2753977243517008355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce68b581a3247719f4a6ca84acadd6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  isOffLink: 0
 --- !u!1 &2940230874963677583
 GameObject:
   m_ObjectHideFlags: 0

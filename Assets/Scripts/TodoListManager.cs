@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-
-public class TodoListManager : SceneSingleton<TodoListManager>
+﻿public class TodoListManager : SceneSingleton<TodoListManager>
 {
 
 }

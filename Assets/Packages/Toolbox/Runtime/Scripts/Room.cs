@@ -16,6 +16,42 @@ public class Room : MonoBehaviour
     public event Action<Room> OnEntered;
     public event Action<Room> OnExisted;
 
+    private void Awake()
+    {
+        foreach (Door door in Doors)
+        {
+            door.OnExitedDoor += EnterRoom;
+        }
+
+        foreach (Door door in Doors)
+        {
+            door.OnUseDoor += ExistRoom;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        foreach (Door door in Doors)
+        {
+            door.OnExitedDoor -= EnterRoom;
+        }
+
+        foreach (Door door in Doors)
+        {
+            door.OnUseDoor -= ExistRoom;
+        }
+    }
+
+    private void ExistRoom(Door.DoorUseState obj)
+    {
+        OnExisted?.Invoke(this);
+    }
+
+    private void EnterRoom()
+    {
+        OnEntered?.Invoke(this);
+    }
+
     private void Reset()
     {
         ListDoors();

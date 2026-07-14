@@ -11,6 +11,9 @@ using UnityEngine;
 [SelectionBase]
 public class Door : MonoBehaviour, IUsable
 {
+    public static Dictionary<NavMeshLink, Door> Table =  new();
+    
+    
     public enum DoorUseState
     {
         Fail,
@@ -22,15 +25,17 @@ public class Door : MonoBehaviour, IUsable
 
     public Transform anchor;
 
-    // public Door Destination;
     public DestinationGetter Getter;
 
     public NavMeshLink MeshLink;
 
     public SoundFileObject openSound;
-    public SoundFileObject lockSound;
-
+    public SoundFileObject lockSound;  
+    public event Action<DoorUseState> OnUseDoor;
+    public event Action OnExitedDoor;
     public bool countdown = false;
+
+    
 
     private void Awake()
     {
@@ -40,6 +45,14 @@ public class Door : MonoBehaviour, IUsable
             return;
         }
         MeshLink = GetComponent<NavMeshLink>();
+        
+        Table.Add(MeshLink,this);
+    }
+
+    public static Door GetDoor(NavMeshLink link)
+    {
+        Table.TryGetValue(link, out Door door);
+        return door;
     }
 
     private void Start()
@@ -53,42 +66,50 @@ public class Door : MonoBehaviour, IUsable
     {
         if (countdown)
         {
-            OnUse?.Invoke(DoorUseState.Fail);
+            OnUseDoor?.Invoke(DoorUseState.Fail);
             return;
         }
 
         if (Getter.Get() == null)
         {
             CenterMessage.Instance.PublishMessage("La porte est bloquée");
-            if (lockSound) lockSound.Play(transform.position);
-            OnUse?.Invoke(DoorUseState.Locked);
+            PlayLockSound();
+            OnUseDoor?.Invoke(DoorUseState.Locked);
             return;
         }
 
         if ((key == null || !Inventory.Instance.Contains(key)) && key != null)
         {
             CenterMessage.Instance.PublishMessage("Une clé est nécessaire");
-            if (lockSound) lockSound.Play(transform.position);
-            OnUse?.Invoke(DoorUseState.Locked);
+            PlayLockSound();
+            OnUseDoor?.Invoke(DoorUseState.Locked);
             return;
         }
 
         Getter.Get().GoTo();
+        SimulateUse();
+        OnUseDoor?.Invoke(DoorUseState.Success);
+    }
+
+    public void PlayLockSound()
+    {
+        if (lockSound) lockSound.Play(transform.position);
+    }
+
+    public void SimulateUse()
+    {
         if (openSound) openSound.Play(transform.position);
-        OnUse?.Invoke(DoorUseState.Success);
     }
 
     public void ExitUse()
     {
     }
 
-    public event Action<DoorUseState> OnUse;
-
-
     private void GoTo()
     {
         GameManager.Instance.player.Teleport(anchor);
         StartCoroutine(PlayingCountdown());
+        OnExitedDoor?.Invoke();
     }
 
     IEnumerator PlayingCountdown()
