@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using AYellowpaper.SerializedCollections;
+using UnityEditor;
 using UnityEngine;
 
 [Serializable]
@@ -41,6 +42,7 @@ public class DestinationGetter : MonoBehaviour
 
     public void AddDoorToRule(Door door, float probability = 1)
     {
+        Undo.RecordObject(this, "Add door destination");
         SerializedDictionary<Door, float> pair = new() { { door, probability } };
         DayCompareGroup compare = new()
         {
@@ -48,13 +50,15 @@ public class DestinationGetter : MonoBehaviour
             Day = 0
         };
         RuledDestinations.Add(compare, pair);
-
+        EditorUtility.SetDirty(this);
         if (!Destination) AddDoor(door);
     }
 
     public void AddDoor(Door door)
     {
+        Undo.RecordObject(this, "Add door destination");
         Destination = door;
+        EditorUtility.SetDirty(this);
     }
 
     public Door Get(int day)
@@ -75,7 +79,12 @@ public class DestinationGetter : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (Destination == null) return;
+        if (Destination == null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawCube(transform.position+Vector3.up, new Vector3(1,2,1));
+            return;
+        }
         Gizmos.DrawLine(transform.position, Destination.anchor.position);
 
         Gizmos.color = Color.gray;

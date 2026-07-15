@@ -73,7 +73,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76ec1223c384d55b37169c6d5f24544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorDelay: 1
 --- !u!114 &4968148453154695697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +216,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: af8afa54cc423fa47979f2c4b16420f9, type: 2}
+  - {fileID: -876546973899608171, guid: 46b63b82a5ea4b04abf9702d7fb24362, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

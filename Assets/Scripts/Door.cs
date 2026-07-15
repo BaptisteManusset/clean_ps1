@@ -150,6 +150,12 @@ public class Door : MonoBehaviour, IUsable
 
     public void SetOtherDoor(Door a_door, bool probability = false)
     {
+        if (!Getter)
+        {
+            Undo.RecordObject(gameObject.transform, "Add reference to destination getter");
+            Getter = GetComponent<DestinationGetter>();
+        }
+        
         if (probability)
         {
             Getter.AddDoorToRule(a_door);
