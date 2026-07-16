@@ -24,4 +24,6 @@ public class Player : MonoBehaviour
         transform.SetPositionAndRotation(a_destination.position, a_destination.rotation);
         Physics.SyncTransforms();
     }
+
+    public Room CurrentRoom;
 }

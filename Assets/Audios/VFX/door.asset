@@ -17,22 +17,22 @@ MonoBehaviour:
   files:
   - {fileID: 8300000, guid: a3aff06074505fb46917e2a8316ae3bf, type: 3}
   - {fileID: 8300000, guid: 842b46e3b31b6c548bcc63a24440e930, type: 3}
-  neverRepeat: 0
+  neverRepeat: 1
   loopStart: 0
   loopEnd: 0
   bpm: 120
   relativeVolume: 0.332
-  spatialize: 0
-  maxDistance: 2
-  priority: 128
+  spatialize: 1
+  maxDistance: 4
+  priority: 64
   startingPitch: 1
   pitchShift: 0.05
   loopMode: 0
   delay: 0
   ignoreTimeScale: 0
-  maxPlayingInstances: 10
+  maxPlayingInstances: 4
   channelOverride: 0
-  mixerGroupOverride: {fileID: 0}
+  mixerGroupOverride: {fileID: 2609797869227875114, guid: 555edaf44a04f6341a9483f43608463d, type: 2}
   fadeInOut: 0
   fadeInDuration: 0
   fadeOutDuration: 0

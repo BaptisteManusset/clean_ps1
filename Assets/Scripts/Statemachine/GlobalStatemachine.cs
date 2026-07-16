@@ -17,4 +17,15 @@ public class GlobalStatemachine : SimpleStateMachine
         currentDay++;
         DayChanged?.Invoke();
     }
+
+    public void SetDay(int day)
+    {
+        currentDay = day;
+        DayChanged?.Invoke();
+    }
+
+    public bool IsCurrentDay(int day)
+    {
+        return currentDay == day;
+    }
 }

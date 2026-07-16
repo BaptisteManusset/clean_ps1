@@ -5,63 +5,48 @@ using UnityEngine;
 public class DayCompareGroup
 {
     public int Day;
-    public DayFeedbackComparation Comparation;
+    public DayCompareFlag Comparation;
 
     public bool IsValid(int currentDay)
     {
-        return Comparation switch
-        {
-            DayFeedbackComparation.Equal => currentDay == Day,
-            DayFeedbackComparation.NotEqual => currentDay != Day,
-            DayFeedbackComparation.Less => currentDay < Day,
-            DayFeedbackComparation.LessOrEqual => currentDay <= Day,
-            DayFeedbackComparation.More => Day > currentDay,
-            DayFeedbackComparation.MoreOrEqual => currentDay >= Day,
-            DayFeedbackComparation.Always => true,
-            DayFeedbackComparation.Never => false,
-            _ => false
-        };
+        if (Comparation.HasFlag(DayCompareFlag.Equal) && currentDay == Day) return true;
+        if (Comparation.HasFlag(DayCompareFlag.Less) && currentDay < Day) return true;
+        if (Comparation.HasFlag(DayCompareFlag.More) && currentDay > Day) return true;
+        return false;
+    }
+
+    public override string ToString()
+    {
+        if (Comparation.HasFlag(DayCompareFlag.Equal | DayCompareFlag.Less | DayCompareFlag.More)) return "⊤";
+        if (Comparation.HasFlag(DayCompareFlag.Equal | DayCompareFlag.Less)) return "<";
+        if (Comparation.HasFlag(DayCompareFlag.Equal | DayCompareFlag.More)) return ">";
+        if (Comparation.HasFlag(DayCompareFlag.Less | DayCompareFlag.More)) return "=/=";
+        if (Comparation.HasFlag(DayCompareFlag.Equal)) return "=";
+        if (Comparation.HasFlag(DayCompareFlag.Less)) return "<";
+        if (Comparation.HasFlag(DayCompareFlag.More)) return ">";
+        if (Comparation == 0) return "⊥";
+        return base.ToString();
     }
 }
 
-public enum DayFeedbackComparation
+[Flags]
+public enum DayCompareFlag
 {
-    Equal,
-    NotEqual,
-    Less,
-    LessOrEqual,
-    More,
-    MoreOrEqual,
-    Always,
-    Never
+    Equal = 1,
+    Less = 4,
+    More = 8
 }
 
 [Serializable]
 public abstract class DayChangeDataBase<T>
 {
-    public int Day;
-    public DayFeedbackComparation Comparation;
-
+    public DayCompareGroup Comparation;
 
     public T objToEnable;
 
     public abstract T Execute(int currentDay);
 
-    protected bool CanIEnable(int currentDay)
-    {
-        return Comparation switch
-        {
-            DayFeedbackComparation.Equal => Day == currentDay,
-            DayFeedbackComparation.NotEqual => Day != currentDay,
-            DayFeedbackComparation.Less => Day < currentDay,
-            DayFeedbackComparation.LessOrEqual => Day <= currentDay,
-            DayFeedbackComparation.More => Day > currentDay,
-            DayFeedbackComparation.MoreOrEqual => Day >= currentDay,
-            DayFeedbackComparation.Always => true,
-            DayFeedbackComparation.Never => false,
-            _ => false
-        };
-    }
+    protected bool CanIEnable(int currentDay) => Comparation.IsValid(currentDay);
 }
 
 [Serializable]

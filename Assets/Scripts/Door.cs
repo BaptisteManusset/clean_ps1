@@ -11,9 +11,11 @@ using UnityEngine;
 [SelectionBase]
 public class Door : MonoBehaviour, IUsable
 {
-    public static Dictionary<NavMeshLink, Door> Table =  new();
-    
-    
+    public static Dictionary<NavMeshLink, Door> Table = new();
+
+
+    public Room parentRoom;
+
     public enum DoorUseState
     {
         Fail,
@@ -21,6 +23,7 @@ public class Door : MonoBehaviour, IUsable
         Success
     }
 
+    private const float DelayBeforeReuse = 1f;
     public ItemData key;
 
     public Transform anchor;
@@ -30,23 +33,24 @@ public class Door : MonoBehaviour, IUsable
     public NavMeshLink MeshLink;
 
     public SoundFileObject openSound;
-    public SoundFileObject lockSound;  
+    public SoundFileObject lockSound;
     public event Action<DoorUseState> OnUseDoor;
     public event Action OnExitedDoor;
     public bool countdown = false;
 
-    
 
     private void Awake()
     {
+        parentRoom = GetComponentInParent<Room>();
         if (Getter == null)
         {
-            Debug.LogWarning($"Missing Getter in {gameObject.name}",gameObject);
+            Debug.LogWarning($"Missing Getter in {gameObject.name}", gameObject);
             return;
         }
+
         MeshLink = GetComponent<NavMeshLink>();
-        
-        Table.Add(MeshLink,this);
+
+        Table.Add(MeshLink, this);
     }
 
     public static Door GetDoor(NavMeshLink link)
@@ -87,7 +91,7 @@ public class Door : MonoBehaviour, IUsable
         }
 
         Getter.Get().GoTo();
-        SimulateUse();
+        PlaySound();
         OnUseDoor?.Invoke(DoorUseState.Success);
     }
 
@@ -97,6 +101,11 @@ public class Door : MonoBehaviour, IUsable
     }
 
     public void SimulateUse()
+    {
+        PlaySound();
+    }
+
+    private void PlaySound()
     {
         if (openSound) openSound.Play(transform.position);
     }
@@ -108,14 +117,15 @@ public class Door : MonoBehaviour, IUsable
     private void GoTo()
     {
         GameManager.Instance.player.Teleport(anchor);
-        StartCoroutine(PlayingCountdown());
+        GameManager.Instance.player.CurrentRoom = parentRoom;
+        StartCoroutine(PreventingInstantReuse());
         OnExitedDoor?.Invoke();
     }
 
-    IEnumerator PlayingCountdown()
+    IEnumerator PreventingInstantReuse()
     {
         countdown = true;
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(DelayBeforeReuse);
         countdown = false;
     }
 #if UNITY_EDITOR
@@ -155,7 +165,7 @@ public class Door : MonoBehaviour, IUsable
             Undo.RecordObject(gameObject.transform, "Add reference to destination getter");
             Getter = GetComponent<DestinationGetter>();
         }
-        
+
         if (probability)
         {
             Getter.AddDoorToRule(a_door);

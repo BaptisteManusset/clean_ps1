@@ -46,7 +46,7 @@ public class DestinationGetter : MonoBehaviour
         SerializedDictionary<Door, float> pair = new() { { door, probability } };
         DayCompareGroup compare = new()
         {
-            Comparation = DayFeedbackComparation.Never,
+            Comparation = DayCompareFlag.Equal,
             Day = 0
         };
         RuledDestinations.Add(compare, pair);

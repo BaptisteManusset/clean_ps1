@@ -160,11 +160,36 @@ public class ToolsWindows : EditorWindow
             using (new GUILayout.HorizontalScope())
             {
                 EditorGUILayout.LabelField("state",
-                    GameManager.Instance ? GameManager.Instance.globalStatemachine.CurrentState.ToString() : "Undefined");
+                    GameManager.Instance
+                        ? GameManager.Instance.globalStatemachine.CurrentState.ToString()
+                        : "Undefined");
 
                 if (GUILayout.Button("Next") && Application.isPlaying)
                 {
                     GameManager.Instance.globalStatemachine.NextState();
+                }
+            }
+
+            using (new GUILayout.HorizontalScope())
+            {
+                if(Application.isPlaying)
+                {
+                    GUILayout.Label("Day");
+                    for (int i = 1; i < 5; i++)
+                    {
+                        if (GUILayout.Button($"{i}",
+                                GameManager.Instance.globalStatemachine.IsCurrentDay(i)
+                                    ? EditorStyles.boldLabel
+                                    : EditorStyles.label))
+                        {
+                            GameManager.Instance.globalStatemachine.SetDay(i);
+                        }
+                    }
+
+                    if (GUILayout.Button($"++"))
+                    {
+                        GameManager.Instance.globalStatemachine.IncreaseDay();
+                    }
                 }
             }
 
