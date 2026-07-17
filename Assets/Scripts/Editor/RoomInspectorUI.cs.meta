@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 64cd328e59314897af3c609f39ee6c72
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - doorIcon: {instanceID: 0}
+  - roomIcon: {fileID: 6351911890074273382, guid: 0000000000000000d000000000000000, type: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

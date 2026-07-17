@@ -33,7 +33,7 @@ public class GetterElement
 public class DestinationGetter : MonoBehaviour
 {
     [SerializeField]
-    private Door Destination;
+    public Door Destination;
 
 
     public SerializedDictionary<DayCompareGroup, SerializedDictionary<Door, float>> RuledDestinations = new();

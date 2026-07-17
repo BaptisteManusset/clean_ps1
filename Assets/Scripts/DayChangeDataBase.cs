@@ -17,14 +17,14 @@ public class DayCompareGroup
 
     public override string ToString()
     {
-        if (Comparation.HasFlag(DayCompareFlag.Equal | DayCompareFlag.Less | DayCompareFlag.More)) return "⊤";
-        if (Comparation.HasFlag(DayCompareFlag.Equal | DayCompareFlag.Less)) return "<";
-        if (Comparation.HasFlag(DayCompareFlag.Equal | DayCompareFlag.More)) return ">";
-        if (Comparation.HasFlag(DayCompareFlag.Less | DayCompareFlag.More)) return "=/=";
-        if (Comparation.HasFlag(DayCompareFlag.Equal)) return "=";
-        if (Comparation.HasFlag(DayCompareFlag.Less)) return "<";
-        if (Comparation.HasFlag(DayCompareFlag.More)) return ">";
-        if (Comparation == 0) return "⊥";
+        if (Comparation.HasFlag(DayCompareFlag.Equal | DayCompareFlag.Less | DayCompareFlag.More)) return "Always ⊤";
+        if (Comparation.HasFlag(DayCompareFlag.Equal | DayCompareFlag.Less)) return $"<= {Day}";
+        if (Comparation.HasFlag(DayCompareFlag.Equal | DayCompareFlag.More)) return $">= {Day}";
+        if (Comparation.HasFlag(DayCompareFlag.Less | DayCompareFlag.More)) return $"=/= {Day}";
+        if (Comparation.HasFlag(DayCompareFlag.Equal)) return $"= {Day}";
+        if (Comparation.HasFlag(DayCompareFlag.Less)) return $"< {Day}";
+        if (Comparation.HasFlag(DayCompareFlag.More)) return $"> {Day}";
+        if (Comparation == 0) return "never ⊥";
         return base.ToString();
     }
 }

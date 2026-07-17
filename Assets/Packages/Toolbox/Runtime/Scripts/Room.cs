@@ -10,7 +10,7 @@ using UnityEditor;
 [SelectionBase]
 public class Room : MonoBehaviour
 {
-    [SerializeField] private List<Door> Doors = new();
+    [SerializeField] public List<Door> Doors = new();
 
     [SerializeField] private Bounds m_bounds = new(Vector3.zero, Vector3.zero);
     public event Action<Room> OnEntered;
