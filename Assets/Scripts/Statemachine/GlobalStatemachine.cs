@@ -2,6 +2,9 @@
 
 public class GlobalStatemachine : SimpleStateMachine
 {
+    
+    
+    
     public int currentDay = 0;
     public event Action DayChanged;
 

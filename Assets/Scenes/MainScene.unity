@@ -486,10 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textToDisplay: Dirigez vous vers le batiment
-  Doors:
-  - {fileID: 4708416715464815913}
-  - {fileID: 38093641}
-  - {fileID: 4708416715464815912}
+  Doors: []
 --- !u!1 &78707698
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,10 +2297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textToDisplay: Dirigez vous vers le batiment
-  Doors:
-  - {fileID: 4708416715464815913}
-  - {fileID: 38093641}
-  - {fileID: 4708416715464815912}
+  Doors: []
 --- !u!1 &777680962
 GameObject:
   m_ObjectHideFlags: 0
@@ -4044,7 +4038,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 704
   m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -6101,10 +6095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textToDisplay: Dirigez vous vers le batiment
-  Doors:
-  - {fileID: 4708416715464815913}
-  - {fileID: 38093641}
-  - {fileID: 4708416715464815912}
+  Doors: []
 --- !u!114 &1867078080 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4313398754568052672, guid: a0f25f7af8ea70247a4cadebcf3a9116, type: 3}
@@ -10513,6 +10504,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door salle des profs 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6835032380524591967, guid: 87bb0c2d91680154daec4d48c898e70f, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6835032380524591967, guid: 87bb0c2d91680154daec4d48c898e70f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d75f8f9b6dbfc4247b2e8fe5c7807dae, type: 2}
     - target: {fileID: 7899709361910026845, guid: 87bb0c2d91680154daec4d48c898e70f, type: 3}
       propertyPath: m_Name
       value: salle des profs

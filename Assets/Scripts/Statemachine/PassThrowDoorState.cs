@@ -40,5 +40,7 @@ public class PassThrowDoorState : SimpleState
     {
         Release();
         m_stateMachine.NextState();
+        
+        
     }
 }

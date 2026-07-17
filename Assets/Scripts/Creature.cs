@@ -15,13 +15,9 @@ public class Creature : MonoBehaviour
         linkMover = GetComponent<AgentLinkMover>();
     }
 
-    private void Start()
-    {
-        linkMover.agent.SetDestination(GameManager.Instance.player.transform.position);
-    }
-
     private void OnEnable()
     {
+        linkMover.agent.SetDestination(GameManager.Instance.player.transform.position);
         linkMover.OnEnterMeshLink += EnterMeshLink;
     }
 
