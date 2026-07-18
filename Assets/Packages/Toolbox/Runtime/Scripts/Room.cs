@@ -56,6 +56,7 @@ public class Room : MonoBehaviour
     {
         ListDoors();
         CalculateBounds();
+        SetDoorsNames();
     }
 
     private void ListDoors()
