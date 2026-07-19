@@ -130,7 +130,7 @@ public class Door : MonoBehaviour, IUsable
     }
 #if UNITY_EDITOR
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.DrawCube(anchor.position, Vector3.one * .2f);
         Gizmos.DrawCube(anchor.position + anchor.forward, Vector3.one * .1f);

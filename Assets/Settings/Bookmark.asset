@@ -15,4 +15,7 @@ MonoBehaviour:
   m_currentIndex: 0
   m_folders:
   - m_name: Default
-    m_list: []
+    m_list:
+    - m_name: Shader
+      m_path: Assets/Graphics/Shaders/Billboard
+      m_icon: {fileID: 3764734208316478041, guid: 0000000000000000d000000000000000, type: 0}

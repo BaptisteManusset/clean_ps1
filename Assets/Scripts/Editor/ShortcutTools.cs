@@ -6,13 +6,13 @@ using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
-public class RoomInfos : EditorWindow
+public class ShortcutTools : EditorWindow
 {
     [MenuItem("Tools/Room Infos")]
     private static void ShowWindow()
     {
-        var window = GetWindow<RoomInfos>();
-        window.titleContent = new GUIContent(nameof(RoomInfos));
+        var window = GetWindow<ShortcutTools>();
+        window.titleContent = new GUIContent(nameof(ShortcutTools));
         window.Show();
     }
 

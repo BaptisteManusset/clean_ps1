@@ -77,7 +77,7 @@ public class DestinationGetter : MonoBehaviour
         return door;
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         if (Destination == null)
         {

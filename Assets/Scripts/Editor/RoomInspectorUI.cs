@@ -14,13 +14,14 @@ public class RoomInspectorUI : EditorWindow
     public Texture roomIcon;
     private Vector2 pos;
     GUIStyle style;
+    static RoomInspectorUI window;
 
 
     [MenuItem("Tools/Room inspector")]
     private static void ShowWindow()
     {
-        RoomInspectorUI window = GetWindow<RoomInspectorUI>();
-        window.titleContent = new GUIContent("TITLE");
+        window = GetWindow<RoomInspectorUI>();
+        window.titleContent = new GUIContent("Room inspector");
         window.Show();
         window.autoRepaintOnSceneChange = true;
     }
@@ -51,6 +52,7 @@ public class RoomInspectorUI : EditorWindow
 
     private void OnSceneGUI(SceneView sceneView)
     {
+        if(!window.hasFocus) return;
         Handles.color = Color.red;
         // Handles.DrawWireDisc(area.center, new Vector3(0, 1, 0), area.radius);
 
