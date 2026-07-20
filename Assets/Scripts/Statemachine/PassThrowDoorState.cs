@@ -38,6 +38,7 @@ public class PassThrowDoorState : SimpleState
 
     private void OnUseDoor(Door.DoorUseState doorUseState)
     {
+        if (doorUseState != Door.DoorUseState.Success) return;
         Release();
         m_stateMachine.NextState();
         

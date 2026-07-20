@@ -11,6 +11,8 @@ using UnityEditor;
 public class Room : MonoBehaviour
 {
     [SerializeField] public List<Door> Doors = new();
+    [SerializeField] public List<Light> Lights = new();
+
 
     [SerializeField] private Bounds m_bounds = new(Vector3.zero, Vector3.zero);
     public event Action<Room> OnEntered;
@@ -20,12 +22,30 @@ public class Room : MonoBehaviour
     {
         foreach (Door door in Doors)
         {
-            door.OnExitedDoor += EnterRoom;
+            door.OnExitedDoor += PlayerEnterNewRoom;
         }
 
         foreach (Door door in Doors)
         {
-            door.OnUseDoor += ExistRoom;
+            door.OnUseDoor += PlayerExitPreviousRoom;
+        }
+
+        DisableLights();
+    }
+
+    private void DisableLights()
+    {
+        foreach (Light l in Lights)
+        {
+            l.enabled = false;
+        }
+    }
+
+    private void EnableLights()
+    {
+        foreach (Light l in Lights)
+        {
+            l.enabled = true;
         }
     }
 
@@ -33,39 +53,80 @@ public class Room : MonoBehaviour
     {
         foreach (Door door in Doors)
         {
-            door.OnExitedDoor -= EnterRoom;
+            door.OnUseDoor -= PlayerExitPreviousRoom;
         }
 
         foreach (Door door in Doors)
         {
-            door.OnUseDoor -= ExistRoom;
+            door.OnExitedDoor -= PlayerEnterNewRoom;
         }
     }
 
-    private void ExistRoom(Door.DoorUseState obj)
+    private void PlayerEnterNewRoom()
     {
-        OnExisted?.Invoke(this);
-    }
-
-    private void EnterRoom()
-    {
+        EnableLights();
         OnEntered?.Invoke(this);
     }
 
+    private void PlayerExitPreviousRoom(Door.DoorUseState doorUseState)
+    {
+        if (doorUseState != Door.DoorUseState.Success) return;
+        DisableLights();
+        OnExisted?.Invoke(this);
+    }
+
+#if UNITY_EDITOR
+
+
+    private void ListDoors()
+    {
+        if (Doors.Count != 0) return;
+        Doors = GetComponentsInChildren<Door>(true).ToList();
+        EditorUtility.SetDirty(this);
+    }
+
+    private void ListLights()
+    {
+        if (Lights.Count != 0) return;
+        Lights = GetComponentsInChildren<Light>(true).ToList();
+        EditorUtility.SetDirty(this);
+    }
+
+    [EditorButton]
     private void Reset()
     {
+        ForceUpdateData();
+    }
+
+    [ContextMenu("Force Update Data")]
+    private void ForceUpdateData()
+    {
+        ListLights();
         ListDoors();
         CalculateBounds();
         SetDoorsNames();
     }
 
-    private void ListDoors()
+    private void OnDrawGizmosSelected()
     {
-        Doors = GetComponentsInChildren<Door>(true).ToList();
+        Gizmos.color = new Color(0.67f, 0.68f, 1f);
+        Gizmos.DrawWireCube(m_bounds.center + transform.localPosition, m_bounds.size);
+        Handles.Label(m_bounds.center + transform.localPosition, gameObject.name, EditorStyles.boldLabel);
+    }
+
+    public void SetDoorsNames()
+    {
+        for (int i = 0; i < Doors.Count; i++)
+        {
+            Doors[i].gameObject.name = $"Door {gameObject.name} {i}";
+            EditorUtility.SetDirty(Doors[i].gameObject);
+        }
     }
 
     private void CalculateBounds()
     {
+        if (m_bounds.size != Vector3.zero && m_bounds.center != Vector3.zero) return;
+
         Collider[] colliders = transform.GetComponentsInChildren<Collider>();
 
         m_bounds = colliders.First().bounds;
@@ -76,44 +137,7 @@ public class Room : MonoBehaviour
         }
 
         m_bounds.center -= transform.position;
-    }
-
-#if UNITY_EDITOR
-    private void OnDrawGizmosSelected()
-    {
-        if (m_bounds.size == Vector3.zero || m_bounds.center == Vector3.zero)
-        {
-            CalculateBounds();
-            EditorUtility.SetDirty(this);
-        }
-
-        if (Doors.Count == 0)
-        {
-            ListDoors();
-            EditorUtility.SetDirty(this);
-
-            SetDoorsNames();
-        }
-
-        Gizmos.color = new Color(0.67f, 0.68f, 1f);
-        Gizmos.DrawWireCube(m_bounds.center + transform.localPosition, m_bounds.size);
-        Handles.Label(m_bounds.center + transform.localPosition, gameObject.name, EditorStyles.boldLabel);
-    }
-
-    [EditorButton]
-    public void SetDoorsNames()
-    {
-        if (Doors.Count == 0)
-        {
-            ListDoors();
-            EditorUtility.SetDirty(this);
-        }
-
-        for (int i = 0; i < Doors.Count; i++)
-        {
-            Doors[i].gameObject.name = $"Door {gameObject.name} {i}";
-            EditorUtility.SetDirty(Doors[i].gameObject);
-        }
+        EditorUtility.SetDirty(this);
     }
 #endif
 }
