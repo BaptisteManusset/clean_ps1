@@ -4,10 +4,12 @@ using UnityEngine;
 public class Shadow : MonoBehaviour
 {
     [SerializeField] private float delay = 1;
+    [SerializeField] private float minDistance = 6;
 
     [SerializeField] private VisibleEvent visible;
 
     private bool wait = false;
+
 
     private void Awake()
     {
@@ -16,22 +18,28 @@ public class Shadow : MonoBehaviour
 
     private void OnEnable()
     {
-        visible.beginVisible += OnBecameInvisible;
+        visible.beginVisible += OnBecameVisible;
         visible.endVisible += OnEndVisible;
         wait = false;
     }
 
     private void OnDisable()
     {
-        visible.beginVisible -= OnBecameInvisible;
+        visible.beginVisible -= OnBecameVisible;
         visible.endVisible -= OnEndVisible;
         wait = false;
     }
 
-    private void OnBecameInvisible()
+    private void OnBecameVisible()
     {
         if (gameObject.activeInHierarchy)
         {
+            if (Vector3.Distance(GameManager.Instance.Cam.transform.position, transform.position) <= minDistance)
+            {
+                Hide();
+                return;
+            }
+
             StartCoroutine(WaitForHide());
         }
     }
@@ -45,6 +53,11 @@ public class Shadow : MonoBehaviour
         if (wait) yield break;
         wait = true;
         yield return new WaitForSeconds(delay);
+        Hide();
+    }
+
+    private void Hide()
+    {
         gameObject.SetActive(false);
     }
 }

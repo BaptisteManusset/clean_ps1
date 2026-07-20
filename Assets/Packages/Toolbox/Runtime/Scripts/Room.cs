@@ -79,7 +79,6 @@ public class Room : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-
     private void OnDrawGizmosSelected()
     {
         if (m_bounds.size == Vector3.zero || m_bounds.center == Vector3.zero)

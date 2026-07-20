@@ -19,3 +19,9 @@ MonoBehaviour:
     - m_name: Shader
       m_path: Assets/Graphics/Shaders/Billboard
       m_icon: {fileID: 3764734208316478041, guid: 0000000000000000d000000000000000, type: 0}
+    - m_name: arrow.fbx
+      m_path: Assets/Graphics/Models/arrow.fbx
+      m_icon: {fileID: -5093997336329155648, guid: 0000000000000000d000000000000000, type: 0}
+    - m_name: Floors
+      m_path: Assets/Graphics/Materials/Floors
+      m_icon: {fileID: 3764734208316478041, guid: 0000000000000000d000000000000000, type: 0}
