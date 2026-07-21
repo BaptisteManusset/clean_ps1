@@ -149,48 +149,71 @@ public class ShortcutTools : EditorWindow
                 }
             }
 
-            GUILayout.FlexibleSpace();
-            if (GUILayout.Button("TP player") && Application.isPlaying)
+            using (new EditorGUI.DisabledGroupScope(!Application.isPlaying))
             {
-                GameManager.Instance.player.Teleport(SceneView.lastActiveSceneView.camera.transform);
-                GameManager.Instance.player.transform.eulerAngles = Vector3.forward;
-            }
-
-            GUILayout.FlexibleSpace();
-            using (new GUILayout.HorizontalScope())
-            {
-                EditorGUILayout.LabelField("state",
-                    GameManager.Instance
-                        ? GameManager.Instance.globalStatemachine.CurrentState.ToString()
-                        : "Undefined");
-
-                if (GUILayout.Button("Next") && Application.isPlaying)
+                if (GUILayout.Button("TP player"))
                 {
-                    GameManager.Instance.globalStatemachine.NextState();
+                    GameManager.Instance.player.Teleport(SceneView.lastActiveSceneView.camera.transform);
+                    GameManager.Instance.player.transform.eulerAngles = Vector3.forward;
+                    GameManager.Instance.player.SetCurrentRoom();
                 }
-            }
 
-            using (new GUILayout.HorizontalScope())
-            {
-                if(Application.isPlaying)
+                // GUILayout.FlexibleSpace();
+                // using (new GUILayout.HorizontalScope())
+                // {
+                //     EditorGUILayout.LabelField("state",
+                //         GameManager.Instance
+                //             ? GameManager.Instance.globalStatemachine.CurrentState.ToString()
+                //             : "Undefined");
+                //
+                //     if (GUILayout.Button("Next") && Application.isPlaying)
+                //     {
+                //         GameManager.Instance.globalStatemachine.NextState();
+                //     }
+                // }
+
+
+                using (new GUILayout.HorizontalScope())
                 {
-                    GUILayout.Label("Day");
-                    for (int i = 1; i < 5; i++)
+                    if (GUILayout.Button("Lights Off"))
                     {
-                        if (GUILayout.Button($"{i}",
-                                GameManager.Instance.globalStatemachine.IsCurrentDay(i)
-                                    ? EditorStyles.boldLabel
-                                    : EditorStyles.label))
+                        foreach (Light l in FindObjectsByType<Light>(FindObjectsInactive.Include,
+                                     FindObjectsSortMode.InstanceID))
                         {
-                            GameManager.Instance.globalStatemachine.SetDay(i);
+                            l.gameObject.SetActive(false);
                         }
                     }
 
-                    if (GUILayout.Button($"++"))
+                    if (GUILayout.Button("Lights On"))
                     {
-                        GameManager.Instance.globalStatemachine.IncreaseDay();
+                        foreach (Light l in FindObjectsByType<Light>(FindObjectsInactive.Include,
+                                     FindObjectsSortMode.InstanceID))
+                        {
+                            l.gameObject.SetActive(true);
+                        }
                     }
                 }
+
+
+                // using (new GUILayout.HorizontalScope())
+                // {
+                //     GUILayout.Label("Day");
+                //     for (int i = 1; i < 5; i++)
+                //     {
+                //         if (GUILayout.Button($"{i}",
+                //                 GameManager.Instance.globalStatemachine.IsCurrentDay(i)
+                //                     ? EditorStyles.boldLabel
+                //                     : EditorStyles.label))
+                //         {
+                //             GameManager.Instance.globalStatemachine.SetDay(i);
+                //         }
+                //     }
+                //
+                //     if (GUILayout.Button($"++"))
+                //     {
+                //         GameManager.Instance.globalStatemachine.IncreaseDay();
+                //     }
+                // }
             }
 
             using (new GUILayout.HorizontalScope())

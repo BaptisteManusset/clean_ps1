@@ -34,8 +34,8 @@ public class Door : MonoBehaviour, IUsable
 
     public SoundFileObject openSound;
     public SoundFileObject lockSound;
-    public event Action<DoorUseState> OnUseDoor;
-    public event Action OnExitedDoor;
+    public event Action<DoorUseData> OnUseDoor;
+    // public event Action OnExitedDoor;
     public bool countdown = false;
 
 
@@ -68,61 +68,89 @@ public class Door : MonoBehaviour, IUsable
 
     public void Use()
     {
+        DoorUseData useInfo = new(a_originRoom: parentRoom);
+
+
         if (countdown)
         {
-            OnUseDoor?.Invoke(DoorUseState.Fail);
+            useInfo.State = DoorUseState.Fail;
+            OnUseDoor?.Invoke(useInfo);
             return;
         }
 
         if (Getter.Get() == null)
         {
             CenterMessage.Instance.PublishMessage("La porte est bloquée");
-            PlayLockSound();
-            OnUseDoor?.Invoke(DoorUseState.Locked);
+            PlayLockSound(transform.position);
+
+            useInfo.State = DoorUseState.Locked;
+            OnUseDoor?.Invoke(useInfo);
             return;
         }
 
         if ((key == null || !Inventory.Instance.Contains(key)) && key != null)
         {
             CenterMessage.Instance.PublishMessage("Une clé est nécessaire");
-            PlayLockSound();
-            OnUseDoor?.Invoke(DoorUseState.Locked);
+            PlayLockSound(transform.position);
+            useInfo.State = DoorUseState.Locked;
+            OnUseDoor?.Invoke(useInfo);
             return;
         }
 
-        Getter.Get().GoTo();
-        PlaySound();
-        OnUseDoor?.Invoke(DoorUseState.Success);
+        useInfo.State = DoorUseState.Success;
+        Door destination = Getter.Get().GoTo();
+        useInfo.destinationRoom = destination.parentRoom;
+
+        PlaySound(destination.transform.position);
+        OnUseDoor?.Invoke(useInfo);
     }
 
-    public void PlayLockSound()
+
+    public struct DoorUseData
     {
-        if (lockSound) lockSound.Play(transform.position);
+        public Room originRoom;
+        public Room destinationRoom;
+
+        public DoorUseState State;
+
+        public DoorUseData(Room a_originRoom) : this()
+        {
+            originRoom = a_originRoom;
+            destinationRoom = null;
+            State = DoorUseState.Locked;
+        }
+    }
+
+    public void PlayLockSound(Vector3 position)
+    {
+        if (lockSound) lockSound.Play(position);
     }
 
     public void SimulateUse()
     {
-        PlaySound();
+        PlaySound(transform.position);
     }
 
-    private void PlaySound()
+    private void PlaySound(Vector3 position)
     {
-        if (openSound) openSound.Play(transform.position);
+        if (openSound) openSound.Play(position);
     }
 
     public void ExitUse()
     {
     }
 
-    private void GoTo()
+    private Door GoTo()
     {
+        StartCoroutine(PreventingInstantReuse());
         GameManager.Instance.player.Teleport(anchor);
         GameManager.Instance.player.CurrentRoom = parentRoom;
-        StartCoroutine(PreventingInstantReuse());
-        OnExitedDoor?.Invoke();
+
+        // OnExitedDoor?.Invoke();
+        return this;
     }
 
-    IEnumerator PreventingInstantReuse()
+    private IEnumerator PreventingInstantReuse()
     {
         countdown = true;
         yield return new WaitForSecondsRealtime(DelayBeforeReuse);

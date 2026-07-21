@@ -15,16 +15,11 @@ public class Room : MonoBehaviour
 
 
     [SerializeField] private Bounds m_bounds = new(Vector3.zero, Vector3.zero);
-    public event Action<Room> OnEntered;
-    public event Action<Room> OnExisted;
+    // public event Action<Room> OnEntered;
+    // public event Action<Room> OnExisted;
 
     private void Awake()
     {
-        foreach (Door door in Doors)
-        {
-            door.OnExitedDoor += PlayerEnterNewRoom;
-        }
-
         foreach (Door door in Doors)
         {
             door.OnUseDoor += PlayerExitPreviousRoom;
@@ -37,7 +32,7 @@ public class Room : MonoBehaviour
     {
         foreach (Light l in Lights)
         {
-            l.enabled = false;
+            l.gameObject.SetActive(false);
         }
     }
 
@@ -45,7 +40,7 @@ public class Room : MonoBehaviour
     {
         foreach (Light l in Lights)
         {
-            l.enabled = true;
+            l.gameObject.SetActive(true);
         }
     }
 
@@ -55,24 +50,19 @@ public class Room : MonoBehaviour
         {
             door.OnUseDoor -= PlayerExitPreviousRoom;
         }
-
-        foreach (Door door in Doors)
-        {
-            door.OnExitedDoor -= PlayerEnterNewRoom;
-        }
     }
 
-    private void PlayerEnterNewRoom()
+    public void PlayerEnterNewRoom()
     {
         EnableLights();
-        OnEntered?.Invoke(this);
     }
 
-    private void PlayerExitPreviousRoom(Door.DoorUseState doorUseState)
+    private void PlayerExitPreviousRoom(Door.DoorUseData doorUseData)
     {
-        if (doorUseState != Door.DoorUseState.Success) return;
-        DisableLights();
-        OnExisted?.Invoke(this);
+        if (doorUseData.State != Door.DoorUseState.Success) return;
+
+        doorUseData.originRoom?.DisableLights();
+        doorUseData.destinationRoom.EnableLights();
     }
 
 #if UNITY_EDITOR

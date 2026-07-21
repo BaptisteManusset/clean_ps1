@@ -4,10 +4,10 @@ public class PassThrowDoorState : SimpleState
 {
     [SerializeField]
     private string textToDisplay = "Dirigez vous vers le batiment";
-    
+
     [SerializeField]
     private Door[] Doors;
-    
+
 
     public override void Enter()
     {
@@ -15,19 +15,19 @@ public class PassThrowDoorState : SimpleState
         {
             door.OnUseDoor += OnUseDoor;
         }
-        
+
         base.Enter();
 
-        TodoListUI.Instance.SetText(textToDisplay);
+        if (TodoListUI.Instance) TodoListUI.Instance.SetText(textToDisplay);
     }
 
     public override void Exit()
     {
-        Release();
+        Unsubscribe();
         base.Exit();
     }
 
-    private void Release()
+    private void Unsubscribe()
     {
         foreach (Door door in Doors)
         {
@@ -36,12 +36,10 @@ public class PassThrowDoorState : SimpleState
     }
 
 
-    private void OnUseDoor(Door.DoorUseState doorUseState)
+    private void OnUseDoor(Door.DoorUseData doorUseData)
     {
-        if (doorUseState != Door.DoorUseState.Success) return;
-        Release();
+        if (doorUseData.State != Door.DoorUseState.Success) return;
+        Unsubscribe();
         m_stateMachine.NextState();
-        
-        
     }
 }

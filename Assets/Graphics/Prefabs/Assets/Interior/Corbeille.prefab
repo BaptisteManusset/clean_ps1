@@ -200,6 +200,10 @@ PrefabInstance:
       propertyPath: variable
       value: 
       objectReference: {fileID: 11400000, guid: 561cbbe43de9f1b418274ce9ada038d8, type: 2}
+    - target: {fileID: 497117416827250262, guid: 37d9608d056e0ab47a9eb011c4e379b4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 958784923762259901, guid: 37d9608d056e0ab47a9eb011c4e379b4, type: 3}
       propertyPath: m_Name
       value: Corbeille
