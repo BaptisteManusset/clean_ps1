@@ -48,9 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Doors:
   - {fileID: 8899218859287444474}
+  Lights: []
   m_bounds:
-    m_Center: {x: -1, y: 1.4500002, z: 0}
-    m_Extent: {x: 3.2999878, y: 1.5500002, z: 2.2999878}
+    m_Center: {x: 1, y: 1.4500008, z: 0}
+    m_Extent: {x: 3.2999878, y: 1.5499992, z: 2.2999954}
 --- !u!1 &5098973935303466392
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9147584597755848278, guid: 2812a5e60c75632469c643b9485bf848, type: 3}
       propertyPath: m_Name
-      value: Door toilette 0
+      value: Door toilette (1) 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
