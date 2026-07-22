@@ -43,26 +43,15 @@ public class WeepingAngel : MonoBehaviour
         }
     }
 
-
-    // private void OnBecameVisible()
-    // {
-    //     isVisible = false;
-    //     Debug.Log("OnBecameVisible");
-    // }
-    //
-    // private void OnBecameInvisible()
-    // {
-    //     isVisible = true;
-    // }
+    public float maxWarpDistance = 5f;
 
     private void Warp()
     {
         Vector3 playerPos = GameManager.Instance.player.transform.position;
-        // if (Vector3.Distance(playerPos, transform.position) >= m_agent.radius * 1.5f)
-        // {
-            m_agent.Warp(Vector3.Lerp(transform.position, playerPos, .1f));
-            Debug.Log("Warped");
-            Debug.Log("OnBecameInvisible");
-        // }
+        if (Vector3.Distance(playerPos, transform.position) < maxWarpDistance) return;
+        Vector3 diff = transform.position - playerPos;
+        diff = Vector3.ClampMagnitude(diff, maxWarpDistance);
+        m_agent.Warp(diff);
+        Debug.Log("Warped");
     }
 }

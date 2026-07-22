@@ -2360,7 +2360,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: af8afa54cc423fa47979f2c4b16420f9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2417,6 +2417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeepingAngel
   isVisible: 0
+  maxWarpDistance: 3
 --- !u!108 &571417133 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 7159737489937772678, guid: a679b40ce0abecc439592be79d95babd, type: 3}
