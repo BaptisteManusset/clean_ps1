@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f877ee4b7dc64e049e5780c9a04aa69a, type: 3}
   m_Name: Plante
   m_EditorClassIdentifier: 
+  image: {fileID: 2085001650, guid: 8f89064a575ad2d418ab5b11ba8884fb, type: 3}

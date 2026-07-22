@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using JSAM;
 using Unity.AI.Navigation;
+using UnityEditor.Sprites;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -166,13 +168,20 @@ public class Door : MonoBehaviour, IUsable
         Gizmos.DrawCube(anchor.position + anchor.forward, Vector3.one * .1f);
         Gizmos.DrawLine(anchor.position, anchor.position + anchor.forward);
 
-        msg += $"{gameObject.name}\n";
         if (Getter.Destination != null)
         {
-            msg += $"Dest: {Getter.Destination.gameObject.name}\n";
+            msg += $"▶️ {Getter.Destination.gameObject.name}\n";
+            foreach (KeyValuePair<DayCompareGroup, SerializedDictionary<Door, float>> ruledDestination in Getter
+                         .RuledDestinations)
+            {
+                foreach (KeyValuePair<Door, float> keyValuePair in ruledDestination.Value)
+                {
+                    msg += $"⚙️➡️ {keyValuePair.Key.gameObject.name}\n";
+                }
+            }
         }
 
-        if (key) msg += $"🔒{key.name}\n";
+        if (key) msg += $"\n🔒{key.name}\n";
 
         Handles.Label(transform.position + transform.up, msg);
     }

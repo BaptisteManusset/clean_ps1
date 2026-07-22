@@ -2,10 +2,15 @@ using System;
 using JSAM;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 [SelectionBase]
 public class InteractorItem : MonoBehaviour, IUsable
 {
     public int count = 1;
+    private int defaultCount = -1;
     public ItemData itemType;
 
     public GameObject defaultVisual;
@@ -13,15 +18,13 @@ public class InteractorItem : MonoBehaviour, IUsable
 
     public SoundFileObject useSound;
 
-    public Zone current;
-
-
+    public SpriteRenderer SpriteRenderer;
     public event Action Used;
 
     private void Awake()
     {
+        defaultCount = count;
         ResetState();
-        current = GetComponentInParent<Zone>();
         Library.Add(this);
     }
 
@@ -42,19 +45,35 @@ public class InteractorItem : MonoBehaviour, IUsable
     {
     }
 
-    private void OnDrawGizmos()
-    {
-        if (!Application.isPlaying) return;
-        Gizmos.color = count != 0 ? Color.red : Color.green;
-        Gizmos.DrawCube(transform.position, Vector3.one);
-    }
 
     public void ResetState()
     {
         defaultVisual.SetActive(true);
         usedVisual.SetActive(false);
-        count = 1;
+        count = defaultCount;
     }
+
+    private void OnValidate()
+    {
+        if (itemType == null || itemType.image == null || SpriteRenderer == null) return;
+
+        Undo.RecordObject(this, "Update key visual");
+        SpriteRenderer.sprite = itemType.image;
+    }
+
+    [EditorButton]
+    private void RenameAsset()
+    {
+        AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(this), itemType.name);
+    }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        if(!enabled) return;
+        Handles.Label(transform.position, itemType.name);
+    }
+#endif
 }
 
 public interface IUsable

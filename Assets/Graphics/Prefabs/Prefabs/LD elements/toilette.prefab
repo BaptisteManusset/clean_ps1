@@ -45,13 +45,13 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3ea4a58169e4645a65988e226f6eba6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Room
   Doors:
   - {fileID: 8899218859287444474}
   Lights: []
   m_bounds:
     m_Center: {x: 1, y: 1.4500008, z: 0}
-    m_Extent: {x: 3.2999878, y: 1.5499992, z: 2.2999954}
+    m_Extent: {x: 3.2999878, y: 1.5499992, z: 2.2999878}
 --- !u!1 &5098973935303466392
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9147584597755848278, guid: 2812a5e60c75632469c643b9485bf848, type: 3}
       propertyPath: m_Name
-      value: Door toilette (1) 0
+      value: Door toilette 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1740,6 +1740,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7080896050864034114}
     m_Modifications:
+    - target: {fileID: 2875882021543607380, guid: da4123aaae06f4f47817f04621cf1e2d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 57f9148bdb9117f42ac5f37d0543d3bb, type: 2}
     - target: {fileID: 4008770649309185851, guid: da4123aaae06f4f47817f04621cf1e2d, type: 3}
       propertyPath: m_LocalScale.x
       value: 2

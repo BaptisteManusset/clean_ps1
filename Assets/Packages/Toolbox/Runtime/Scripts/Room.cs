@@ -99,9 +99,10 @@ public class Room : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+        Gizmos.matrix = Handles.matrix = transform.localToWorldMatrix;
         Gizmos.color = new Color(0.67f, 0.68f, 1f);
-        Gizmos.DrawWireCube(m_bounds.center + transform.localPosition, m_bounds.size);
-        Handles.Label(m_bounds.center + transform.localPosition, gameObject.name, EditorStyles.boldLabel);
+        Gizmos.DrawWireCube(Vector3.zero + m_bounds.center, m_bounds.size);
+        Handles.Label(Vector3.zero, gameObject.name, EditorStyles.boldLabel);
     }
 
     public void SetDoorsNames()

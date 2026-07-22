@@ -62,6 +62,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -83,9 +85,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &4353685329829300286
 BoxCollider:
@@ -160,8 +164,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3ea4a58169e4645a65988e226f6eba6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Room
   Doors:
+  - {fileID: 2394584112256964592}
   - {fileID: 7949951190346087191}
   - {fileID: 6296614040062605929}
   - {fileID: 4519520690662916335}
@@ -169,6 +174,7 @@ MonoBehaviour:
   - {fileID: 7785424977698883735}
   - {fileID: 6523523358373028965}
   - {fileID: 5856640195070139257}
+  - {fileID: 4100023239080346150}
   - {fileID: 4700168921452903611}
   Lights:
   - {fileID: 93066428245263425}
@@ -208,7 +214,7 @@ MonoBehaviour:
   - {fileID: 1566136477480311883}
   - {fileID: 4867809527152626513}
   m_bounds:
-    m_Center: {x: 12, y: 1.4500008, z: 15}
+    m_Center: {x: 12, y: 1.4500008, z: 14.999992}
     m_Extent: {x: 18.299988, y: 1.5499992, z: 15.299988}
 --- !u!1 &3258885187231407515
 GameObject:
@@ -376,6 +382,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -397,9 +405,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &7214916944084090658
 BoxCollider:
@@ -627,7 +637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9147584597755848278, guid: 2812a5e60c75632469c643b9485bf848, type: 3}
       propertyPath: m_Name
-      value: Door Couloir niveau 3 4
+      value: Door Couloir niveau 3 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -700,7 +710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9147584597755848278, guid: 2812a5e60c75632469c643b9485bf848, type: 3}
       propertyPath: m_Name
-      value: Door Couloir niveau 3 0
+      value: Door Couloir niveau 3 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2405,7 +2415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9147584597755848278, guid: 2812a5e60c75632469c643b9485bf848, type: 3}
       propertyPath: m_Name
-      value: Door Couloir niveau 3 7
+      value: Door Couloir niveau 3 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2771,7 +2781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9147584597755848278, guid: 2812a5e60c75632469c643b9485bf848, type: 3}
       propertyPath: m_Name
-      value: Door Couloir niveau 3 5
+      value: Door Couloir niveau 3 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2914,7 +2924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9147584597755848278, guid: 2812a5e60c75632469c643b9485bf848, type: 3}
       propertyPath: m_Name
-      value: Door Couloir niveau 3 1
+      value: Door Couloir niveau 3 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3200,7 +3210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9147584597755848278, guid: 2812a5e60c75632469c643b9485bf848, type: 3}
       propertyPath: m_Name
-      value: Door Couloir niveau 3 6
+      value: Door Couloir niveau 3 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4221,7 +4231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9147584597755848278, guid: 2812a5e60c75632469c643b9485bf848, type: 3}
       propertyPath: m_Name
-      value: Door Couloir niveau 3 2
+      value: Door Couloir niveau 3 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4365,7 +4375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9147584597755848278, guid: 2812a5e60c75632469c643b9485bf848, type: 3}
       propertyPath: m_Name
-      value: Door Couloir niveau 3 3
+      value: Door Couloir niveau 3 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4731,13 +4741,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6071286364300593737, guid: 965f3999f0d548645a73f8de5b8681b4, type: 3}
       propertyPath: m_Name
-      value: double_door
+      value: Door Couloir niveau 3 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 965f3999f0d548645a73f8de5b8681b4, type: 3}
+--- !u!114 &2394584112256964592 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5159939124181875456, guid: 965f3999f0d548645a73f8de5b8681b4, type: 3}
+  m_PrefabInstance: {fileID: 7395065461917805808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2025d7408e7e45228ac00913b9b53c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2565188824561833170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4988279188811266082, guid: 965f3999f0d548645a73f8de5b8681b4, type: 3}
@@ -5727,13 +5748,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6071286364300593737, guid: 965f3999f0d548645a73f8de5b8681b4, type: 3}
       propertyPath: m_Name
-      value: double_door
+      value: Door Couloir niveau 3 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 965f3999f0d548645a73f8de5b8681b4, type: 3}
+--- !u!114 &4100023239080346150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5159939124181875456, guid: 965f3999f0d548645a73f8de5b8681b4, type: 3}
+  m_PrefabInstance: {fileID: 9186776041081485606}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2025d7408e7e45228ac00913b9b53c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4198499843715006724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4988279188811266082, guid: 965f3999f0d548645a73f8de5b8681b4, type: 3}
