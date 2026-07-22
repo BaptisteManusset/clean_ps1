@@ -9,8 +9,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 734d77a98d87a5b439c656121ed0439c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 734d77a98d87a5b439c656121ed0439c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 734d77a98d87a5b439c656121ed0439c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 734d77a98d87a5b439c656121ed0439c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 734d77a98d87a5b439c656121ed0439c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 734d77a98d87a5b439c656121ed0439c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 734d77a98d87a5b439c656121ed0439c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 734d77a98d87a5b439c656121ed0439c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -34,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 734d77a98d87a5b439c656121ed0439c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 734d77a98d87a5b439c656121ed0439c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -51,6 +59,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 734d77a98d87a5b439c656121ed0439c, type: 3}
       propertyPath: m_Name
       value: toilette
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 734d77a98d87a5b439c656121ed0439c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 734d77a98d87a5b439c656121ed0439c, type: 3}
       propertyPath: m_StaticEditorFlags

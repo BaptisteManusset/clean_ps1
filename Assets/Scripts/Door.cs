@@ -34,7 +34,9 @@ public class Door : MonoBehaviour, IUsable
 
     public SoundFileObject openSound;
     public SoundFileObject lockSound;
+
     public event Action<DoorUseData> OnUseDoor;
+
     // public event Action OnExitedDoor;
     public bool countdown = false;
 
@@ -157,12 +159,22 @@ public class Door : MonoBehaviour, IUsable
         countdown = false;
     }
 #if UNITY_EDITOR
-
     private void OnDrawGizmosSelected()
     {
+        string msg = "";
         Gizmos.DrawCube(anchor.position, Vector3.one * .2f);
         Gizmos.DrawCube(anchor.position + anchor.forward, Vector3.one * .1f);
         Gizmos.DrawLine(anchor.position, anchor.position + anchor.forward);
+
+        msg += $"{gameObject.name}\n";
+        if (Getter.Destination != null)
+        {
+            msg += $"Dest: {Getter.Destination.gameObject.name}\n";
+        }
+
+        if (key) msg += $"🔒{key.name}\n";
+
+        Handles.Label(transform.position + transform.up, msg);
     }
 
     [ContextMenu("Link doors")]

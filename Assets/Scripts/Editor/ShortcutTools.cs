@@ -8,10 +8,12 @@ using Random = UnityEngine.Random;
 
 public class ShortcutTools : EditorWindow
 {
-    [MenuItem("Tools/Room Infos")]
+    private static ShortcutTools window;
+
+    [MenuItem("Tools/Tools")]
     private static void ShowWindow()
     {
-        var window = GetWindow<ShortcutTools>();
+        window = GetWindow<ShortcutTools>();
         window.titleContent = new GUIContent(nameof(ShortcutTools));
         window.Show();
     }
@@ -151,11 +153,21 @@ public class ShortcutTools : EditorWindow
 
             using (new EditorGUI.DisabledGroupScope(!Application.isPlaying))
             {
-                if (GUILayout.Button("TP player"))
+                using (new GUILayout.HorizontalScope())
                 {
-                    GameManager.Instance.player.Teleport(SceneView.lastActiveSceneView.camera.transform);
-                    GameManager.Instance.player.transform.eulerAngles = Vector3.forward;
-                    GameManager.Instance.player.SetCurrentRoom();
+                    if (GUILayout.Button("TP player"))
+                    {
+                        GameManager.Instance.player.Teleport(SceneView.lastActiveSceneView.camera.transform);
+                        GameManager.Instance.player.transform.eulerAngles = Vector3.forward;
+                        GameManager.Instance.player.SetCurrentRoom();
+                    }
+
+                    if (GUILayout.Button("DvRoom", GUILayout.Width(EditorGUIUtility.currentViewWidth / 4)))
+                    {
+                        GameManager.Instance.player.Teleport(Vector3.up * 2);
+                        GameManager.Instance.player.transform.eulerAngles = Vector3.forward;
+                        GameManager.Instance.player.SetCurrentRoom();
+                    }
                 }
 
                 // GUILayout.FlexibleSpace();

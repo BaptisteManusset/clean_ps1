@@ -49,4 +49,9 @@ public class Player : MonoBehaviour
         transform.SetPositionAndRotation(a_destination.position, a_destination.rotation);
         Physics.SyncTransforms();
     }
+    public void Teleport(Vector3 a_position)
+    {
+        transform.SetPositionAndRotation(a_position, transform.rotation);
+        Physics.SyncTransforms();
+    }
 }

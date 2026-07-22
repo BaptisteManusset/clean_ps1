@@ -10,11 +10,12 @@ public class RoomInspectorUI : EditorWindow
     private List<Room> rooms = new();
 
     private int index = 0;
-    public Texture doorIcon;
+    public Texture lockIcon;
     public Texture roomIcon;
     private Vector2 pos;
     GUIStyle style;
     static RoomInspectorUI window;
+    public static bool DisplayInsideScene = false;
 
 
     [MenuItem("Tools/Room inspector")]
@@ -52,7 +53,11 @@ public class RoomInspectorUI : EditorWindow
 
     private void OnSceneGUI(SceneView sceneView)
     {
-        if(!window.hasFocus) return;
+        if (!DisplayInsideScene) return;
+
+        if (!window) window = GetWindow<RoomInspectorUI>();
+
+        if (!window.hasFocus) return;
         Handles.color = Color.red;
         // Handles.DrawWireDisc(area.center, new Vector3(0, 1, 0), area.radius);
 
@@ -71,10 +76,15 @@ public class RoomInspectorUI : EditorWindow
 
     private void OnGUI()
     {
-        if (GUILayout.Button("exit focus"))
+        using (new GUILayout.HorizontalScope())
         {
-            SceneVisibilityManager.instance.ExitIsolation();
+            DisplayInsideScene = EditorGUILayout.Toggle("Display Inside Scene", DisplayInsideScene);
+            if (GUILayout.Button("exit focus"))
+            {
+                SceneVisibilityManager.instance.ExitIsolation();
+            }
         }
+
 
         using (EditorGUILayout.ScrollViewScope scope = new(pos))
         {
@@ -96,7 +106,7 @@ public class RoomInspectorUI : EditorWindow
             {
                 if (Selection.activeGameObject == room.gameObject) GUI.color = Color.green;
 
-                if (GUILayout.Button(new GUIContent($"{room.gameObject.name}", roomIcon),
+                if (GUILayout.Button(new GUIContent($"{room.gameObject.name}"),
                         EditorStyles.largeLabel, GUILayout.Height(EditorGUIUtility.singleLineHeight * 2)))
                 {
                     Selection.activeGameObject = room.gameObject;
@@ -178,7 +188,8 @@ public class RoomInspectorUI : EditorWindow
         if (door == null) return;
         if (Selection.activeGameObject == door.gameObject) GUI.color = Color.green;
 
-        if (GUILayout.Button(new GUIContent(door.gameObject.name, door.gameObject.name),
+        if (GUILayout.Button(
+                new GUIContent(door.gameObject.name, door.key ? lockIcon : null, door.gameObject.name),
                 GUILayout.Height(EditorGUIUtility.singleLineHeight)))
         {
             Selection.activeGameObject = door.gameObject;

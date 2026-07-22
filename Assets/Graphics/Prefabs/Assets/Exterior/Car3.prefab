@@ -53,8 +53,16 @@ PrefabInstance:
       value: Car3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9178ba2b224bdbf4b8ea2d1251c33c28, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9178ba2b224bdbf4b8ea2d1251c33c28, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917958771630509919, guid: 9178ba2b224bdbf4b8ea2d1251c33c28, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2917958771630509919, guid: 9178ba2b224bdbf4b8ea2d1251c33c28, type: 3}
       propertyPath: m_StaticEditorFlags

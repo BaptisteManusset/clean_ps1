@@ -1,9 +1,12 @@
 using System;
+using UnityEditor.Recorder.Input;
 using UnityEngine;
 
 public class VisibleEvent : MonoBehaviour
 {
     private Renderer m_renderer;
+
+    private bool visible = false;
 
     public event Action beginVisible;
     public event Action endVisible;
@@ -17,7 +20,7 @@ public class VisibleEvent : MonoBehaviour
     {
         IsVisible();
     }
-    
+
     public bool IsVisible()
     {
         Vector3 screenPos = GameManager.Instance.Cam.WorldToScreenPoint(transform.position);
@@ -26,11 +29,21 @@ public class VisibleEvent : MonoBehaviour
 
         if (onScreen && m_renderer.isVisible)
         {
-            beginVisible?.Invoke();
+            if (!visible)
+            {
+                beginVisible?.Invoke();
+                visible = true;
+            }
+
             return true;
         }
 
-        endVisible?.Invoke();
+        if (visible)
+        {
+            endVisible?.Invoke();
+            visible = false;
+        }
+
         return false;
     }
 }
