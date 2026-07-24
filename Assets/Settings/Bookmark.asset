@@ -25,3 +25,6 @@ MonoBehaviour:
     - m_name: Floors
       m_path: Assets/Graphics/Materials/Floors
       m_icon: {fileID: 3764734208316478041, guid: 0000000000000000d000000000000000, type: 0}
+    - m_name: PC_RPAsset.asset
+      m_path: Assets/Settings/PC_RPAsset.asset
+      m_icon: {fileID: -8549972529105633023, guid: 0000000000000000d000000000000000, type: 0}
