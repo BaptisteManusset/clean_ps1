@@ -2,56 +2,80 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class WeepingAngel : MonoBehaviour
+public class WeepingAngel : MonoBehaviour, IRequestRoomAwaker
 {
     private VisibleEvent m_visibleEvent;
-    private NavMeshAgent m_agent;
+    private NavMeshAgent m_navMeshAgent;
 
     public bool isVisible = false;
+    public float maxWarpDistance = 5;
+    public float maxRadius = 30;
+    public Transform target;
 
     private void Awake()
     {
-        m_agent = GetComponent<NavMeshAgent>();
+        m_navMeshAgent = GetComponent<NavMeshAgent>();
         m_visibleEvent = GetComponent<VisibleEvent>();
+        SendToSleep();
     }
 
-    private void Update()
+
+    private void UpdateLogic()
     {
-        float dot = Vector3.Dot(GameManager.Instance.Cam.transform.forward,
-            transform.InverseTransformPoint(GameManager.Instance.Cam.transform.position));
-        Debug.Log($"{dot:F}");
+        Transform angel = transform;
+
+        Vector3 forward = target.TransformDirection(Vector3.forward);
+        Vector3 toOther = Vector3.Normalize(angel.position - target.position);
 
 
-        Vector3 directionToTarget = GameManager.Instance.Cam.transform.position - transform.position;
-        float angle = Vector3.Angle(GameManager.Instance.Cam.transform.forward, directionToTarget);
-        float distance = directionToTarget.magnitude;
+        bool isBehind = Vector3.Dot(forward, toOther) < 0;
 
-        if (Mathf.Abs(angle) < 90 && distance < 100)
+
+        if (isBehind)
         {
             if (isVisible)
             {
                 isVisible = false;
+                Debug.Log("become hidden");
                 Warp();
+                return;
             }
+
+            Debug.Log("The other transform is behind me!");
         }
         else
         {
             if (!isVisible)
             {
                 isVisible = true;
+                Debug.Log("become visible");
             }
         }
     }
 
-    public float maxWarpDistance = 5f;
+    private void Update()
+    {
+        UpdateLogic();
+    }
+
 
     private void Warp()
     {
-        Vector3 playerPos = GameManager.Instance.player.transform.position;
-        if (Vector3.Distance(playerPos, transform.position) < maxWarpDistance) return;
+        Vector3 playerPos = target.position;
         Vector3 diff = transform.position - playerPos;
         diff = Vector3.ClampMagnitude(diff, maxWarpDistance);
-        m_agent.Warp(diff);
-        Debug.Log("Warped");
+        // transform.position -= diff;
+        m_navMeshAgent.Warp(transform.position - diff);
+        // Debug.Log("Warped");
+    }
+
+    public void WakeUp()
+    {
+        enabled = true;
+    }
+
+    public void SendToSleep()
+    {
+        enabled = false;
     }
 }

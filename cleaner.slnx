@@ -1,0 +1,11 @@
+﻿<Solution>
+  <Project Path="GrabbitAssembly.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="Tayx.Graphy.csproj" />
+  <Project Path="DOTween.Modules.csproj" />
+  <Project Path="Haze.Editor.csproj" />
+  <Project Path="vhacd.csproj" />
+  <Project Path="Haze.Runtime.csproj" />
+  <Project Path="Tayx.Graphy.Editor.csproj" />
+</Solution>

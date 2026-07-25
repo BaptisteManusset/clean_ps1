@@ -22,6 +22,14 @@ public class Inventory : SceneSingleton<Inventory>
         OnChange?.Invoke();
     }
 
+    public void AddItems(ItemData[] items)
+    {
+        foreach (ItemData itemData in items)
+        {
+            AddItem(itemData);
+        }
+    }
+
     private void OnGUI()
     {
         string list = "";

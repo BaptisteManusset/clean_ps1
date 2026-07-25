@@ -57,6 +57,14 @@ Material:
         m_Texture: {fileID: 2800000, guid: 007a3c0ebc12c644a900cc6c13f5c5dd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ParallaxMapping_d2e7ecd1335a455a835933d5f6498b01_Heightmap_1_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_589c7d2350044a9b94f4ca8af60c3bbc_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 3acd6edeb0623fb449ef3e7bf2d9801e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_af9c50f3a41b4f99bf2ebda41572cbea_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 1f1648c987767c34cb9471c9bb2ba15c, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -98,6 +106,7 @@ Material:
     - _QueueOffset: 0
     - _Secondary_Clouds_Cutoff: 0.5
     - _Secondary_Clouds_Smoothness: 0.1
+    - _Size: 0.87
     - _Step_threshold: 0.4
     - _Stretch_Color_Lerp: 1
     m_Colors:

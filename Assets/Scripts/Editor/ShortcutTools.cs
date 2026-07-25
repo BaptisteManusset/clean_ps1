@@ -236,13 +236,22 @@ public class ShortcutTools : EditorWindow
                 {
                     ScanItems();
                 }
+
+                using (new EditorGUI.DisabledScope(Application.isPlaying == false))
+                {
+                    if (GUILayout.Button("GiveAll"))
+                    {
+                        if (counts.Count == 0)
+                        {
+                            ScanItems();
+                        }
+
+                        GiveAllItems();
+                    }
+                }
             }
 
-            if (counts.Count == 0)
-            {
-                ScanItems();
-            }
-            else
+            if (counts.Count != 0)
             {
                 foreach (KeyValuePair<ItemData, int> keyValuePair in counts)
                 {
@@ -252,14 +261,23 @@ public class ShortcutTools : EditorWindow
                         GUILayout.FlexibleSpace();
                         if (GUILayout.Button("Select"))
                         {
-                            Selection.objects = (from interactorItem in items
-                                where interactorItem.itemType == keyValuePair.Key
-                                select interactorItem.gameObject).ToArray();
+                            Selection.objects = items
+                                .Where(interactorItem => interactorItem.itemType == keyValuePair.Key)
+                                .Select(interactorItem => interactorItem.gameObject).ToArray();
                         }
                     }
                 }
             }
         }
+    }
+
+    private void GiveAllItems()
+    {
+        foreach (InteractorItem item in items)
+        {
+            Inventory.Instance.AddItem(item.itemType);
+        }
+  
     }
 
     private static void IncreaseRotation(Vector3 angleAdded)

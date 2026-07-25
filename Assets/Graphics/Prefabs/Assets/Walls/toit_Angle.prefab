@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: toit_Angle
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d8a07b5e82044f4d805cf0d43e7bcdf, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3127108507512805057, guid: 2d8a07b5e82044f4d805cf0d43e7bcdf, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
