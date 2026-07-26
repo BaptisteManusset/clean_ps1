@@ -159,14 +159,14 @@ public class ShortcutTools : EditorWindow
                     {
                         GameManager.Instance.player.Teleport(SceneView.lastActiveSceneView.camera.transform);
                         GameManager.Instance.player.transform.eulerAngles = Vector3.forward;
-                        GameManager.Instance.player.SetCurrentRoom();
+                        GameManager.Instance.player.RoomAgent.TryGetCurrentRoom();
                     }
 
                     if (GUILayout.Button("DvRoom", GUILayout.Width(EditorGUIUtility.currentViewWidth / 4)))
                     {
                         GameManager.Instance.player.Teleport(Vector3.up * 2);
                         GameManager.Instance.player.transform.eulerAngles = Vector3.forward;
-                        GameManager.Instance.player.SetCurrentRoom();
+                        GameManager.Instance.player.RoomAgent.TryGetCurrentRoom();
                     }
                 }
 

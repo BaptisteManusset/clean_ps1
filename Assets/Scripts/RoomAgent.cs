@@ -3,53 +3,34 @@ using UnityEngine;
 
 public class RoomAgent : MonoBehaviour
 {
+    private const float SCAN_RADIUS = 1;
     public Room currentRoom;
 
-    private IRequestRoomAwaker[] m_elementsToToggle;
+    public event Action<Room> CurrentRoomChanged;
 
     private void Awake()
     {
-        m_elementsToToggle = GetComponentsInChildren<IRequestRoomAwaker>();
-
-        RequestCurrentRoom();
+        TryGetCurrentRoom();
     }
 
-    private void OnEnable()
+    public void TryGetCurrentRoom()
     {
-        
-    }
+        Collider[] results = new Collider[6];
+        int size = Physics.OverlapSphereNonAlloc(transform.position, SCAN_RADIUS, results);
+        if (size <= 0)
+        {
+            Debug.LogWarning("no room found");
+            return;
+        }
 
-    private void RequestCurrentRoom()
-    {
-        Collider[] results = Physics.OverlapSphere(transform.position, 1);
         foreach (Collider result in results)
         {
+            if (result == null) continue;
             Room room = result.GetComponentInParent<Room>();
-            if (room != null)
-            {
-                currentRoom = room;
-            }
-        }
-
-
-        UpdateElements();
-    }
-
-    private void UpdateElements()
-    {
-        if (currentRoom == GameManager.Instance.player.CurrentRoom)
-        {
-            foreach (IRequestRoomAwaker roomAwaker in m_elementsToToggle)
-            {
-                roomAwaker.WakeUp();
-            }
-        }
-        else
-        {
-            foreach (IRequestRoomAwaker roomAwaker in m_elementsToToggle)
-            {
-                roomAwaker.SendToSleep();
-            }
+            if (!room) continue;
+            currentRoom = room;
+            CurrentRoomChanged?.Invoke(currentRoom);
+            break;
         }
     }
 }

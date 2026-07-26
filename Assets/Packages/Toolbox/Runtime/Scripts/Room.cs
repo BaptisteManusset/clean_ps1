@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 #if UNITY_EDITOR
@@ -10,39 +9,22 @@ using UnityEditor;
 [SelectionBase]
 public class Room : MonoBehaviour
 {
+    private RoomCulling Culling;
     [SerializeField] public List<Door> Doors = new();
-    [SerializeField] public List<Light> Lights = new();
 
 
     [SerializeField] private Bounds m_bounds = new(Vector3.zero, Vector3.zero);
-    // public event Action<Room> OnEntered;
-    // public event Action<Room> OnExisted;
 
     private void Awake()
     {
+        Culling = GetComponent<RoomCulling>();
         foreach (Door door in Doors)
         {
             door.OnUseDoor += PlayerExitPreviousRoom;
         }
-
-        DisableLights();
     }
 
-    private void DisableLights()
-    {
-        foreach (Light l in Lights)
-        {
-            l.gameObject.SetActive(false);
-        }
-    }
 
-    private void EnableLights()
-    {
-        foreach (Light l in Lights)
-        {
-            l.gameObject.SetActive(true);
-        }
-    }
 
     private void OnDestroy()
     {
@@ -51,18 +33,13 @@ public class Room : MonoBehaviour
             door.OnUseDoor -= PlayerExitPreviousRoom;
         }
     }
-
-    public void PlayerEnterNewRoom()
-    {
-        EnableLights();
-    }
-
+    
     private void PlayerExitPreviousRoom(Door.DoorUseData doorUseData)
     {
         if (doorUseData.State != Door.DoorUseState.Success) return;
 
-        doorUseData.originRoom?.DisableLights();
-        doorUseData.destinationRoom.EnableLights();
+        doorUseData.originRoom?.Culling.DisableLights();
+        doorUseData.destinationRoom.Culling.EnableLights();
     }
 
 #if UNITY_EDITOR
@@ -75,12 +52,7 @@ public class Room : MonoBehaviour
         EditorUtility.SetDirty(this);
     }
 
-    private void ListLights()
-    {
-        if (Lights.Count != 0) return;
-        Lights = GetComponentsInChildren<Light>(true).ToList();
-        EditorUtility.SetDirty(this);
-    }
+
 
     [EditorButton]
     private void Reset()
@@ -91,17 +63,16 @@ public class Room : MonoBehaviour
     [ContextMenu("Force Update Data")]
     private void ForceUpdateData()
     {
-        ListLights();
         ListDoors();
-        CalculateBounds();
+        // CalculateBounds();
         SetDoorsNames();
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.matrix = Handles.matrix = transform.localToWorldMatrix;
-        Gizmos.color = new Color(0.67f, 0.68f, 1f);
-        Gizmos.DrawWireCube(Vector3.zero + m_bounds.center, m_bounds.size);
+        Gizmos.color = Handles.color = new Color(0.67f, 0.68f, 1f);
+        // Gizmos.DrawWireCube(Vector3.zero + m_bounds.center, m_bounds.size);
         Handles.Label(Vector3.zero, gameObject.name, EditorStyles.boldLabel);
     }
 
@@ -114,21 +85,21 @@ public class Room : MonoBehaviour
         }
     }
 
-    private void CalculateBounds()
-    {
-        if (m_bounds.size != Vector3.zero && m_bounds.center != Vector3.zero) return;
-
-        Collider[] colliders = transform.GetComponentsInChildren<Collider>();
-
-        m_bounds = colliders.First().bounds;
-
-        foreach (Collider collider in colliders)
-        {
-            m_bounds.Encapsulate(collider.bounds);
-        }
-
-        m_bounds.center -= transform.position;
-        EditorUtility.SetDirty(this);
-    }
+    // private void CalculateBounds()
+    // {
+    //     if (m_bounds.size != Vector3.zero && m_bounds.center != Vector3.zero) return;
+    //
+    //     Collider[] colliders = transform.GetComponentsInChildren<Collider>();
+    //
+    //     m_bounds = colliders.First().bounds;
+    //
+    //     foreach (Collider collider in colliders)
+    //     {
+    //         m_bounds.Encapsulate(collider.bounds);
+    //     }
+    //
+    //     m_bounds.center -= transform.position;
+    //     EditorUtility.SetDirty(this);
+    // }
 #endif
 }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using JSAM;
 using Unity.AI.Navigation;
-using UnityEditor.Sprites;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -72,7 +71,7 @@ public class Door : MonoBehaviour, IUsable
 
     public void Use()
     {
-        DoorUseData useInfo = new(a_originRoom: parentRoom);
+        DoorUseData useInfo = new(this);
 
 
         if (countdown)
@@ -117,9 +116,9 @@ public class Door : MonoBehaviour, IUsable
 
         public DoorUseState State;
 
-        public DoorUseData(Room a_originRoom) : this()
+        public DoorUseData(Door door) : this()
         {
-            originRoom = a_originRoom;
+            originRoom = door.parentRoom;
             destinationRoom = null;
             State = DoorUseState.Locked;
         }
@@ -148,7 +147,7 @@ public class Door : MonoBehaviour, IUsable
     {
         StartCoroutine(PreventingInstantReuse());
         GameManager.Instance.player.Teleport(anchor);
-        GameManager.Instance.player.CurrentRoom = parentRoom;
+        GameManager.Instance.player.RoomAgent.currentRoom = parentRoom;
 
         // OnExitedDoor?.Invoke();
         return this;
@@ -160,6 +159,7 @@ public class Door : MonoBehaviour, IUsable
         yield return new WaitForSecondsRealtime(DelayBeforeReuse);
         countdown = false;
     }
+    
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {

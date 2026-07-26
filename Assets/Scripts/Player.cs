@@ -2,30 +2,14 @@
 
 public class Player : MonoBehaviour
 {
-    public Room CurrentRoom;
+
+    public RoomAgent RoomAgent;
     public Light Light;
-    
-    private void Start()
+
+    private void Awake()
     {
-        SetCurrentRoom();
+        RoomAgent = GetComponent<RoomAgent>();
         Light.gameObject.SetActive(true);
-    }
-
-    [EditorButton]
-    public void SetCurrentRoom()
-    {
-        Collider[] results = new Collider[3];
-        int size = Physics.OverlapSphereNonAlloc(transform.position, 2, results);
-        if (size == 0) return;
-
-        foreach (Collider collider in results)
-        {
-            Room room = collider.GetComponentInParent<Room>();
-            if (!room) continue;
-            CurrentRoom = room;
-            CurrentRoom.PlayerEnterNewRoom();
-            return;
-        }
     }
 
     private void OnTriggerEnter(Collider other)
