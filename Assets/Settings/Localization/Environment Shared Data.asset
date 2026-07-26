@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Environment Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Environment
+  m_TableCollectionNameGuidString: 7d36988ea62208243ae5b6fd7740151c
+  m_Entries:
+  - m_Id: 71733899264
+    m_Key: sign_cantine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3845030440960
+    m_Key: placeholder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5090323492864
+    m_Key: sign_escalier2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5347425939456
+    m_Key: 'sign_cafet
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5851379953664
+    m_Key: sign_trashbin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6195816198144
+    m_Key: sign_toilette
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7907805261824
+    m_Key: sign_toilette_homme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9044344205312
+    m_Key: sign_escalier_principal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9715751612416
+    m_Key: sign_technologie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10034690682880
+    m_Key: sign_etude
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10195449966592
+    m_Key: sign_salle_prof
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10476661272576
+    m_Key: sign_toilette_femme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10860729495552
+    m_Key: sign_etape_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10911170195456
+    m_Key: sign_etape_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10972734189568
+    m_Key: sign_etape_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11014006140928
+    m_Key: sign_etape_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11847435317248
+    m_Key: sign_svt
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8716143736668553468
+  references:
+    version: 2
+    RefIds:
+    - rid: 8716143736668553468
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1785085581510

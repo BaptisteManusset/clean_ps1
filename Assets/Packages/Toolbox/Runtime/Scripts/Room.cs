@@ -13,7 +13,7 @@ public class Room : MonoBehaviour
     [SerializeField] public List<Door> Doors = new();
 
 
-    [SerializeField] private Bounds m_bounds = new(Vector3.zero, Vector3.zero);
+    // [SerializeField] private Bounds m_bounds = new(Vector3.zero, Vector3.zero);
 
     private void Awake()
     {

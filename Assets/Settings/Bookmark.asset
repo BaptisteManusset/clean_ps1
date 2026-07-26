@@ -28,3 +28,9 @@ MonoBehaviour:
     - m_name: PC_RPAsset.asset
       m_path: Assets/Settings/PC_RPAsset.asset
       m_icon: {fileID: -8549972529105633023, guid: 0000000000000000d000000000000000, type: 0}
+    - m_name: escalier marbre.prefab
+      m_path: Assets/Graphics/Prefabs/Prefabs/LD elements/escalier marbre.prefab
+      m_icon: {fileID: 8597360482269930223, guid: 0000000000000000d000000000000000, type: 0}
+    - m_name: Room Base.prefab
+      m_path: Assets/Graphics/Prefabs/Bases/Room Base.prefab
+      m_icon: {fileID: 7853449062886713960, guid: 0000000000000000d000000000000000, type: 0}

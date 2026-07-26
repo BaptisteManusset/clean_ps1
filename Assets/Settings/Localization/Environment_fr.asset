@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Environment_fr
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 7d36988ea62208243ae5b6fd7740151c, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 71733899264
+    m_Localized: Cantine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3845030440960
+    m_Localized: placeholder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5090323492864
+    m_Localized: Escalier 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5347425939456
+    m_Localized: cafetaria
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5851379953664
+    m_Localized: Local Poubelle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6195816198144
+    m_Localized: Toilette
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7907805261824
+    m_Localized: Toilette\nhomme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9044344205312
+    m_Localized: escalier\nprincipal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9715751612416
+    m_Localized: Salle de\nTechnologie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10034690682880
+    m_Localized: Etude
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10195449966592
+    m_Localized: Salle des\nprofesseurs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10476661272576
+    m_Localized: Toilette\nfemme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10860729495552
+    m_Localized: 1er Etage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10911170195456
+    m_Localized: 2em Etage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10972734189568
+    m_Localized: 3em Etage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11014006140928
+    m_Localized: Etage 0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11847435317248
+    m_Localized: Salle\nde SVT
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
