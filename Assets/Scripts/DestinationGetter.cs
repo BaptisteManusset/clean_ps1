@@ -82,10 +82,17 @@ public class DestinationGetter : MonoBehaviour
         if (Destination == null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawCube(transform.position+Vector3.up, new Vector3(1,2,1));
+            Gizmos.DrawCube(transform.position + Vector3.up, new Vector3(1, 2, 1));
             return;
         }
-        Gizmos.DrawLine(transform.position, Destination.anchor.position);
+
+        Handles.DrawBezier(
+            transform.position, Destination.transform.position,
+            transform.position + Vector3.up * 5,
+            Destination.transform.position + Vector3.up * 5,
+            Color.red, null, 5f);
+
+        // Gizmos.DrawLine(transform.position, Destination.transform.position);
 
         Gizmos.color = Color.gray;
 
