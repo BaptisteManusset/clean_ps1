@@ -1849,7 +1849,7 @@ PrefabInstance:
     - target: {fileID: 5159939124181875456, guid: 965f3999f0d548645a73f8de5b8681b4, type: 3}
       propertyPath: key
       value: 
-      objectReference: {fileID: 11400000, guid: 38816ee32abd3144b8a11f955c9d60c5, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6071286364300593737, guid: 965f3999f0d548645a73f8de5b8681b4, type: 3}
       propertyPath: m_Name
       value: Door Couloir niveau 0 0

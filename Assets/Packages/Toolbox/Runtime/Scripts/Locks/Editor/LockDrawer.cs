@@ -18,11 +18,11 @@ public class LockDrawer : PropertyDrawer
     }
 
 
-    [RuntimeInitializeOnLoadMethod]
-    public static void InitUdr()
-    {
-        m_toRemove = null;
-    }
+    // [RuntimeInitializeOnLoadMethod]
+    // public static void InitUdr()
+    // {
+    //     m_toRemove = null;
+    // }
 
     public override void OnGUI(Rect a_position, SerializedProperty a_property, GUIContent a_label)
     {

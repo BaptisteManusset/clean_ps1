@@ -17,6 +17,8 @@ public class Door : MonoBehaviour, IUsable
 
     public Room parentRoom;
 
+    public bool IsLocked => key == null;
+    
     public enum DoorUseState
     {
         Fail,

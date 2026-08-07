@@ -32,8 +32,9 @@ public class GetterElement
 
 public class DestinationGetter : MonoBehaviour
 {
-    [SerializeField]
     public Door Destination;
+
+    public Door Door;
 
 
     public SerializedDictionary<DayCompareGroup, SerializedDictionary<Door, float>> RuledDestinations = new();
@@ -86,22 +87,25 @@ public class DestinationGetter : MonoBehaviour
             return;
         }
 
-        Handles.DrawBezier(
-            transform.position, Destination.transform.position,
-            transform.position + Vector3.up * 5,
-            Destination.transform.position + Vector3.up * 5,
-            Color.red, null, 5f);
+        Color currentColor = Door.IsLocked ? Color.green : Color.red;
 
-        // Gizmos.DrawLine(transform.position, Destination.transform.position);
+        DrawPath(transform, Destination.transform, currentColor);
 
-        Gizmos.color = Color.gray;
-
-        foreach (var keyValuePair in RuledDestinations)
+        foreach (KeyValuePair<DayCompareGroup, SerializedDictionary<Door, float>> keyValuePair in RuledDestinations)
         {
-            foreach (var valuePair in keyValuePair.Value)
+            foreach (KeyValuePair<Door, float> valuePair in keyValuePair.Value)
             {
-                Gizmos.DrawLine(transform.position, valuePair.Key.anchor.position);
+                DrawPath(transform, valuePair.Key.anchor, Color.gray);
             }
         }
+    }
+
+    private static void DrawPath(Transform a_origin, Transform a_destination, Color currentColor)
+    {
+        Handles.DrawBezier(
+            a_origin.position, a_destination.position,
+            a_origin.position + Vector3.up * 5,
+            a_destination.position + Vector3.up * 5,
+            currentColor, null, 5f);
     }
 }

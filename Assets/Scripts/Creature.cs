@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Unity.AI.Navigation;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,6 +10,8 @@ public class Creature : MonoBehaviour
 
     public Lock passDoor = new();
     [Range(0.1f, 100)] public float doorDelay = 1;
+
+    public CinemachineCamera camera;
 
     private void Awake()
     {
@@ -31,6 +34,11 @@ public class Creature : MonoBehaviour
         if (linkMover.agent.pathStatus == NavMeshPathStatus.PathComplete)
         {
             linkMover.agent.SetDestination(GameManager.Instance.player.transform.position);
+            camera.enabled = true;
+        }
+        else
+        {
+            camera.enabled = false;
         }
     }
 

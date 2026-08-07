@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2025d7408e7e45228ac00913b9b53c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentRoom: {fileID: 0}
   key: {fileID: 0}
   anchor: {fileID: 4199995088409171810}
   Getter: {fileID: 442964809096149261}
@@ -146,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Destination: {fileID: 0}
+  Door: {fileID: 974618265191995830}
   RuledDestinations:
     _serializedList: []
 --- !u!1 &4084913421541755605

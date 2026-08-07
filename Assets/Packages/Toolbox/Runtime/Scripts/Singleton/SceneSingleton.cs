@@ -8,13 +8,13 @@ public abstract class SceneSingleton<T> : MonoBehaviour where T : MonoBehaviour
     #region Domain Reload
 
 // As we are in a package, using RuntimeInitializeOnLoadMethod causes an error on PC at runtime, so keep it only in editor
-#if UNITY_EDITOR
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    private static void ClearStaticDomain()
-    {
-        S_INSTANCE = null;
-    }
-#endif
+// #if UNITY_EDITOR
+//     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+//     private static void ClearStaticDomain()
+//     {
+//         S_INSTANCE = null;
+//     }
+// #endif
 
     #endregion
 

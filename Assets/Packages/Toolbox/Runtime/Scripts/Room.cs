@@ -20,20 +20,30 @@ public class Room : MonoBehaviour
         Culling = GetComponent<RoomCulling>();
         foreach (Door door in Doors)
         {
+            if (door == null)
+            {
+                Debug.LogWarning("Missing Door inside " + gameObject.name, gameObject);
+                continue;
+            }
+
             door.OnUseDoor += PlayerExitPreviousRoom;
         }
     }
-
 
 
     private void OnDestroy()
     {
         foreach (Door door in Doors)
         {
+            if (door == null)
+            {
+                continue;
+            }
+
             door.OnUseDoor -= PlayerExitPreviousRoom;
         }
     }
-    
+
     private void PlayerExitPreviousRoom(Door.DoorUseData doorUseData)
     {
         if (doorUseData.State != Door.DoorUseState.Success) return;
@@ -51,7 +61,6 @@ public class Room : MonoBehaviour
         Doors = GetComponentsInChildren<Door>(true).ToList();
         EditorUtility.SetDirty(this);
     }
-
 
 
     [EditorButton]
