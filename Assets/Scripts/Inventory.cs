@@ -1,14 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 
 public class Inventory : SceneSingleton<Inventory>
 {
     Dictionary<ItemData, int> items = new();
 
-    public event Action<int> OnAddItem;
+    public event Action<ItemAddedInfo> OnAddItem;
     public event Action OnClearItem;
     public event Action OnChange;
+
+
+    public struct ItemAddedInfo
+    {
+        public ItemData item;
+        public int quantityInInventoryAfter;
+        public int quantityAdded;
+
+        public ItemAddedInfo(ItemData a_item, int a_quantityInInventoryAfter, int a_quantityAdded)
+        {
+            item = a_item;
+            quantityAdded = a_quantityAdded;
+            quantityInInventoryAfter = a_quantityInInventoryAfter;
+        }
+    }
 
 
     public void AddItem(ItemData item, int count = 1)
@@ -18,7 +34,7 @@ public class Inventory : SceneSingleton<Inventory>
             items[item] += count;
         }
 
-        OnAddItem?.Invoke(items[item]);
+        OnAddItem?.Invoke(new ItemAddedInfo(item, items[item], count));
         OnChange?.Invoke();
     }
 

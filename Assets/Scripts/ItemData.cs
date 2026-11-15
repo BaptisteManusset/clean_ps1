@@ -5,5 +5,5 @@ using UnityEngine;
 public class ItemData : ScriptableObject
 {
     public Sprite image;
-
+    public int MaxCount = 1;
 }

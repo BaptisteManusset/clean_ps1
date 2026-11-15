@@ -20,12 +20,14 @@ public class InteractorItem : MonoBehaviour, IUsable
 
     public SpriteRenderer SpriteRenderer;
     public event Action Used;
+    public event Action<ItemData> GlobalUsed;
 
     private void Awake()
     {
         defaultCount = count;
         ResetState();
         Library.Add(this);
+        
     }
 
     public void Use()
@@ -38,6 +40,7 @@ public class InteractorItem : MonoBehaviour, IUsable
         usedVisual.SetActive(true);
 
         Used?.Invoke();
+        Library.Used(itemType);
         useSound?.Play();
     }
 
@@ -74,6 +77,10 @@ public class InteractorItem : MonoBehaviour, IUsable
         Handles.Label(transform.position, itemType.name);
     }
 #endif
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
 }
 
 public interface IUsable

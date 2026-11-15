@@ -161,8 +161,28 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9112333029475109970, guid: 37d9608d056e0ab47a9eb011c4e379b4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3512395732548899618}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 958784923762259901, guid: 37d9608d056e0ab47a9eb011c4e379b4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 357329645328161777}
   m_SourcePrefab: {fileID: 100100000, guid: 37d9608d056e0ab47a9eb011c4e379b4, type: 3}
+--- !u!1 &2411348034592093210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 958784923762259901, guid: 37d9608d056e0ab47a9eb011c4e379b4, type: 3}
+  m_PrefabInstance: {fileID: 3186469961445655463}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &357329645328161777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2411348034592093210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0824ef46fe4077bed404d3699479bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemHideIfAlreadyInInventory
 --- !u!4 &5930430439700795381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9112333029475109970, guid: 37d9608d056e0ab47a9eb011c4e379b4, type: 3}
