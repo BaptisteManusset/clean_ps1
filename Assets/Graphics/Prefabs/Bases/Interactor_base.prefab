@@ -78,11 +78,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b439712e96217fc4db2e6258e58ccef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  variable: {fileID: 0}
-  isAlreadyUsed: 0
+  count: 1
+  itemType: {fileID: 0}
   defaultVisual: {fileID: 8699489725645905248}
   usedVisual: {fileID: 196066296715330459}
   useSound: {fileID: 0}
+  SpriteRenderer: {fileID: 0}
 --- !u!65 &6254299984937448252
 BoxCollider:
   m_ObjectHideFlags: 0

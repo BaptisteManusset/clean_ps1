@@ -104,6 +104,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 497117416827250262, guid: 37d9608d056e0ab47a9eb011c4e379b4, type: 3}
+      propertyPath: useSound
+      value: 
+      objectReference: {fileID: 11400000, guid: f49bec5405377b04a933419b020bc069, type: 2}
+    - target: {fileID: 497117416827250262, guid: 37d9608d056e0ab47a9eb011c4e379b4, type: 3}
       propertyPath: SpriteRenderer
       value: 
       objectReference: {fileID: 3112599823590804682}

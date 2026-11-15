@@ -1,18 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using AYellowpaper.SerializedCollections;
 using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 
 public class Fleer : MonoBehaviour
 {
-    private Transform m_player;
     public NavMeshAgent m_agent;
     public Pose m_pose;
+
+    [SerializeField]
+    private FleeState state = FleeState.Idle;
+
+    public float m_maxRadiusFlee = 30;
+    public float m_fleeDistance = 10;
+    public float m_maxFleeDistance = 20;
+    public int m_count = 10;
+    public SerializedDictionary<Vector3, float> posAndNote = new();
+    private int m_areaMask;
+
+    private NavMeshHit m_hit;
+    private Transform m_player;
 
     private void Start()
     {
@@ -26,81 +35,58 @@ public class Fleer : MonoBehaviour
         m_areaMask = 1 << NavMesh.GetAreaFromName("Walkable");
     }
 
-    enum FleeState
-    {
-        Idle,
-        Fleeing,
-        Returning
-    }
-
-    [SerializeField]
-    private FleeState state = FleeState.Idle;
+    private float contactDelay = 10;
 
     private void Update()
     {
-        if (m_agent.hasPath && m_agent.pathStatus != NavMeshPathStatus.PathComplete) return;
-
-        if (Vector3.Distance(m_player.position, transform.position) <= m_fleeDistance && m_agent.remainingDistance >= m_agent.stoppingDistance)
-        {
-            RunFrom();
-            return;
-        }
-
-        if (m_agent.isPathStale || m_agent.pathStatus == NavMeshPathStatus.PathComplete)
-        {
-            if (Vector3.Distance(m_player.position, m_pose.position) >= m_fleeDistance)
-            {
-                m_agent.SetDestination(m_pose.position);
-                return;
-            }
-        }
-
-        // switch (state)
+        // if (Vector3.Distance(m_player.position, transform.position) <= m_maxFleeDistance)
         // {
-        //     case FleeState.Idle:
-        //         if (Vector3.Distance(m_player.position, transform.position) <= m_fleeDistance)
-        //         {
-        //             RunFrom();
-        //         }
-        //
-        //         break;
-        //     case FleeState.Fleeing:
-        //     //     if (Vector3.Distance(m_player.position, m_pose.position) <= m_fleeDistance)
-        //     //     {
-        //     //         m_agent.SetDestination(m_pose.position);
-        //     //     }
-        //     //
-        //     //     break;
-        //     // case FleeState.Returning:
-        //     //     if (Vector3.Distance(m_player.position, m_pose.position) <= .2f)
-        //     //     {
-        //     //         state = FleeState.Idle;
-        //     //     }
-        //
-        //         break;
+        //     return;
         // }
 
 
-        // if (Time.time > nextTurnTime)
+        if (Vector3.Distance(m_player.position, transform.position) <= m_fleeDistance)
+        {
+            Vector3 diff = transform.position - m_player.position;
+            diff.y = 0;
+            diff *= 5;
+            diff = Vector3.ClampMagnitude(diff, m_maxRadiusFlee);
+
+            if (NavMesh.SamplePosition(transform.position + diff, out m_hit, 5, m_areaMask))
+            {
+                m_agent.SetDestination(m_hit.position);
+            }
+
+            contactDelay = 10;
+            // RunFrom();
+            // state = FleeState.Fleeing;
+        }
+        else
+        {
+            contactDelay -= Time.deltaTime;
+            if (contactDelay <= 0)
+            {
+                m_agent.SetDestination(m_pose.position);
+            }
+        }
     }
 
-    private NavMeshHit m_hit;
-    private int m_areaMask;
+    private void OnDrawGizmosSelected()
+    {
+        if (m_agent == null) return;
+        Handles.Label(transform.position + Vector3.up,
+            @$"status: {m_agent.pathStatus}
+remaining dst {m_agent.remainingDistance}
+isPathStale {m_agent.isPathStale}
+contactDelay {contactDelay}");
+    }
 
     private void RunFrom()
     {
         NavMesh.SamplePosition(GetFleePoint(), out m_hit, 5, m_areaMask);
-
-        Debug.Log(m_hit.position);
+        if (m_hit.position == Vector3.positiveInfinity) return;
         m_agent.SetDestination(m_hit.position);
-
-        state = FleeState.Fleeing;
     }
-
-    public float m_maxRadiusFlee = 30;
-    public float m_fleeDistance = 10;
-    public int m_count = 10;
-    public SerializedDictionary<Vector3, float> posAndNote = new();
 
     private Vector3 GetFleePoint()
     {
@@ -128,13 +114,11 @@ public class Fleer : MonoBehaviour
         return posAndNote.OrderByDescending(x => x.Value).First().Key;
     }
 
-    private void OnDrawGizmosSelected()
+    private enum FleeState
     {
-        if (m_agent == null) return;
-        Handles.Label(transform.position + Vector3.up,
-            @$"status: {m_agent.pathStatus}
-remaining dst {m_agent.remainingDistance}
-isPathStale {m_agent.isPathStale}");
+        Idle,
+        Fleeing,
+        Returning
     }
 
     //

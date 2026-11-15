@@ -5214,7 +5214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1225d8c2419b63045a6bfabd47f2ed8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDay: 0
+  currentDay: 2
   DefaultState: {fileID: 1360916926}
 --- !u!108 &797060845 stripped
 Light:
