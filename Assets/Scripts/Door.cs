@@ -115,7 +115,6 @@ public class Door : MonoBehaviour, IUsable
     {
         public Room originRoom;
         public Room destinationRoom;
-
         public DoorUseState State;
 
         public DoorUseData(Door door) : this()

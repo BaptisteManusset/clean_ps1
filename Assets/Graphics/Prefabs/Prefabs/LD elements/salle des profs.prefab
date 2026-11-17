@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5566784707519602654}
   - component: {fileID: 7976383016651936486}
+  - component: {fileID: 5721286583850975118}
   m_Layer: 0
   m_Name: salle des profs
   m_TagString: Untagged
@@ -71,15 +72,26 @@ MonoBehaviour:
   Doors:
   - {fileID: 5461073937909349216}
   - {fileID: 236044089147642292}
+--- !u!114 &5721286583850975118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7899709361910026845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd58fb39db5469b84461978fe0e9a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomCulling
   Lights:
   - {fileID: 2169281679866169932}
   - {fileID: 671320163971206228}
   - {fileID: 335853727725930717}
   - {fileID: 5492494069096007656}
   - {fileID: 5655074821674481052}
-  m_bounds:
-    m_Center: {x: 3, y: 4.450226, z: -7.968704}
-    m_Extent: {x: 3.2999878, y: 4.550226, z: 9.268723}
+  Items:
+  - {fileID: 5732920178039325834}
 --- !u!1001 &222252919052830895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1643,6 +1655,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+--- !u!114 &5732920178039325834 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8112952382511313057, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+  m_PrefabInstance: {fileID: 4546827692435764267}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b439712e96217fc4db2e6258e58ccef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6057894496405346720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}

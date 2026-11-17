@@ -91,6 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5956138954447217287}
   - component: {fileID: 8095207898488613765}
+  - component: {fileID: 5359262043768475907}
   m_Layer: 0
   m_Name: salle PC petite
   m_TagString: Untagged
@@ -127,6 +128,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ea4a58169e4645a65988e226f6eba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Doors: []
+--- !u!114 &5359262043768475907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789351469572758871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd58fb39db5469b84461978fe0e9a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomCulling
+  Lights:
+  - {fileID: 5685876109799747952}
+  - {fileID: 4074256324500608860}
+  Items:
+  - {fileID: 2690869075537869886}
 --- !u!1001 &54036533530955258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1240,6 +1259,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9170637275202781265, guid: b3a969c0b3ab5944da99b439333ff6ad, type: 3}
   m_PrefabInstance: {fileID: 3967046517034286211}
   m_PrefabAsset: {fileID: 0}
+--- !u!108 &5685876109799747952 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 8783582759952649715, guid: b3a969c0b3ab5944da99b439333ff6ad, type: 3}
+  m_PrefabInstance: {fileID: 3967046517034286211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4003862881522412151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1448,6 +1472,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a969c0b3ab5944da99b439333ff6ad, type: 3}
+--- !u!108 &4074256324500608860 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 8783582759952649715, guid: b3a969c0b3ab5944da99b439333ff6ad, type: 3}
+  m_PrefabInstance: {fileID: 4715030705049328303}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4479816582719953662 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9170637275202781265, guid: b3a969c0b3ab5944da99b439333ff6ad, type: 3}
@@ -1888,6 +1917,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+--- !u!114 &2690869075537869886 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8112952382511313057, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+  m_PrefabInstance: {fileID: 6179251087488994463}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b439712e96217fc4db2e6258e58ccef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4524280749602922772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}

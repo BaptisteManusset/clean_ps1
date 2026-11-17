@@ -48,8 +48,8 @@ public class Room : MonoBehaviour
     {
         if (doorUseData.State != Door.DoorUseState.Success) return;
 
-        doorUseData.originRoom?.Culling.DisableLights();
-        doorUseData.destinationRoom.Culling.EnableLights();
+        doorUseData.originRoom?.Culling.DisableObjects();
+        doorUseData.destinationRoom.Culling.EnableObjects();
     }
 
 #if UNITY_EDITOR

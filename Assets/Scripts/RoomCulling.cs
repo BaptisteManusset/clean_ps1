@@ -10,39 +10,56 @@ public class RoomCulling : MonoBehaviour
     private Room m_room;
 
     [SerializeField] public List<Light> Lights = new();
+    [SerializeField] public List<InteractorItem> Items = new();
 
     private void Awake()
     {
         m_room = GetComponent<Room>();
-        DisableLights();
+
+        if (Lights.Count + Items.Count == 0)
+        {
+            DisableObjects();
+        }
     }
 
-    public void DisableLights()
+    public void DisableObjects()
     {
         foreach (Light l in Lights)
         {
             l.gameObject.SetActive(false);
         }
+
+        foreach (InteractorItem o in Items)
+        {
+            o.gameObject.SetActive(false);
+        }
     }
 
-    public void EnableLights()
+    public void EnableObjects()
     {
-        foreach (Light l in Lights)
+        foreach (Light light in Lights)
         {
-            l.gameObject.SetActive(true);
+            light.gameObject.SetActive(true);
+        }
+
+        foreach (InteractorItem item in Items)
+        {
+            item.gameObject.SetActive(true);
         }
     }
 
     private void Reset()
     {
-        ListLights();
+        ListObjects();
     }
 
 #if UNITY_EDITOR
     [EditorButton]
-    private void ListLights()
+    private void ListObjects()
     {
         Lights = GetComponentsInChildren<Light>(true).ToList();
+        Items = GetComponentsInChildren<InteractorItem>(true).ToList();
+
         EditorUtility.SetDirty(this);
     }
 #endif

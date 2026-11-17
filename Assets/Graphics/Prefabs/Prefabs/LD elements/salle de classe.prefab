@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2140587632175010701}
   - component: {fileID: 4560850647041841807}
+  - component: {fileID: -5312546296294739430}
   m_Layer: 0
   m_Name: salle de classe
   m_TagString: Untagged
@@ -68,15 +69,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Doors:
   - {fileID: 1089606641521421703}
+--- !u!114 &-5312546296294739430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523638851019123805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd58fb39db5469b84461978fe0e9a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomCulling
   Lights:
   - {fileID: 7373664868863205095}
   - {fileID: 6188272197033150897}
   - {fileID: 7159737489937772678}
   - {fileID: 2002071209948293659}
   - {fileID: 1342814303307871360}
-  m_bounds:
-    m_Center: {x: -4.9999924, y: 1.4499998, z: 3.0000076}
-    m_Extent: {x: 6.2999954, y: 1.5500002, z: 3.2999954}
+  Items:
+  - {fileID: 491822758196682535}
 --- !u!1001 &61004126448524096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -910,6 +922,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2140587632175010701}
     m_Modifications:
+    - target: {fileID: 3610486425430947454, guid: 2812a5e60c75632469c643b9485bf848, type: 3}
+      propertyPath: MeshLink
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7703138936901004805, guid: 23ee078b69ee0de4aada0d44ae677181, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -965,10 +981,6 @@ PrefabInstance:
     - target: {fileID: 8839476248383657322, guid: 23ee078b69ee0de4aada0d44ae677181, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610486425430947454, guid: 2812a5e60c75632469c643b9485bf848, type: 3}
-      propertyPath: MeshLink
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2840,6 +2852,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+--- !u!114 &491822758196682535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8112952382511313057, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+  m_PrefabInstance: {fileID: 8522412502720114566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b439712e96217fc4db2e6258e58ccef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2111577191018447373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}

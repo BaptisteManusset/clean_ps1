@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3261842823615560267}
   - component: {fileID: 7104812214374227182}
+  - component: {fileID: 3848480631833748100}
   m_Layer: 0
   m_Name: Locale poubelle
   m_TagString: Untagged
@@ -61,10 +62,20 @@ MonoBehaviour:
   Doors:
   - {fileID: 6139838979284911203}
   - {fileID: 3373023591528985316}
+--- !u!114 &3848480631833748100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030289735801592923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd58fb39db5469b84461978fe0e9a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomCulling
   Lights: []
-  m_bounds:
-    m_Center: {x: 0, y: 1.4500002, z: 1}
-    m_Extent: {x: 3.300003, y: 1.5500002, z: 5.2999954}
+  Items: []
 --- !u!1001 &148469665195058209
 PrefabInstance:
   m_ObjectHideFlags: 0

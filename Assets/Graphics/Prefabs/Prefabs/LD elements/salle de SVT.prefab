@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5673111325786147960}
   - component: {fileID: 1092963143663005238}
+  - component: {fileID: 8254072597274318876}
   m_Layer: 0
   m_Name: salle de SVT
   m_TagString: Untagged
@@ -75,15 +76,27 @@ MonoBehaviour:
   Doors:
   - {fileID: 8948928517967081504}
   - {fileID: 7661881549308047366}
+--- !u!114 &8254072597274318876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757247869051176095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd58fb39db5469b84461978fe0e9a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomCulling
   Lights:
   - {fileID: 634356919229487107}
   - {fileID: 2907149387980833741}
   - {fileID: 8794330652314361574}
   - {fileID: 7398336590977678712}
   - {fileID: 1276770204381715550}
-  m_bounds:
-    m_Center: {x: -5, y: 1.4500008, z: 4.199997}
-    m_Extent: {x: 6.300003, y: 1.5499992, z: 4.5}
+  Items:
+  - {fileID: 6627555677517191191}
+  - {fileID: 9107046300835502862}
 --- !u!1001 &36216815780681022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1044,6 +1057,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8133009067762295498, guid: 82cc5103aacbfca42b131e1bfaa61ab4, type: 3}
   m_PrefabInstance: {fileID: 1522885734626338030}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9107046300835502862 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7728417606775635936, guid: 82cc5103aacbfca42b131e1bfaa61ab4, type: 3}
+  m_PrefabInstance: {fileID: 1522885734626338030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b439712e96217fc4db2e6258e58ccef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1548447453437237433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1840,6 +1864,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7712525691711008139, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
   m_PrefabInstance: {fileID: 3129775186207303862}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6627555677517191191 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8112952382511313057, guid: 8cb764cc7a242534681d76bf145cb800, type: 3}
+  m_PrefabInstance: {fileID: 3129775186207303862}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b439712e96217fc4db2e6258e58ccef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3413700206157035965
 PrefabInstance:
   m_ObjectHideFlags: 0

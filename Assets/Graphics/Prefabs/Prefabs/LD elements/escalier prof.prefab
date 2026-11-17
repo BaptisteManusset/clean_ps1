@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 826244025191795967}
   - component: {fileID: 676989990182602370}
+  - component: {fileID: 6791506033480233627}
   m_Layer: 0
   m_Name: escalier prof
   m_TagString: Untagged
@@ -58,6 +59,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ea4a58169e4645a65988e226f6eba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Doors: []
+--- !u!114 &6791506033480233627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450215485258556051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd58fb39db5469b84461978fe0e9a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomCulling
+  Lights: []
+  Items: []
 --- !u!1001 &1238311345361337749
 PrefabInstance:
   m_ObjectHideFlags: 0
