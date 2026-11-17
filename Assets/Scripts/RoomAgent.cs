@@ -8,11 +8,12 @@ public class RoomAgent : MonoBehaviour
 
     public event Action<Room> CurrentRoomChanged;
 
-    private void Awake()
+    private void Start()
     {
         TryGetCurrentRoom();
     }
 
+    [EditorButton]
     public void TryGetCurrentRoom()
     {
         Collider[] results = new Collider[6];
@@ -28,7 +29,15 @@ public class RoomAgent : MonoBehaviour
             if (result == null) continue;
             Room room = result.GetComponentInParent<Room>();
             if (!room) continue;
+            Door.DoorUseData doorUseData = new()
+            {
+                destinationRoom = room,
+                originRoom = currentRoom,
+                State = Door.DoorUseState.ByCode
+            };
             currentRoom = room;
+            currentRoom.PlayerExitPreviousRoom(doorUseData);
+
             CurrentRoomChanged?.Invoke(currentRoom);
             break;
         }

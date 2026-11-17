@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -18,28 +17,30 @@ public class RoomCulling : MonoBehaviour
 
         if (Lights.Count + Items.Count == 0)
         {
-            DisableObjects();
+            ListObjects();
         }
     }
 
     public void DisableObjects()
     {
-        foreach (Light l in Lights)
+        foreach (Light lght in Lights)
         {
-            l.gameObject.SetActive(false);
+            lght.gameObject.SetActive(false);
+            lght.shadows = LightShadows.None;
         }
 
-        foreach (InteractorItem o in Items)
+        foreach (InteractorItem item in Items)
         {
-            o.gameObject.SetActive(false);
+            item.gameObject.SetActive(false);
         }
     }
 
     public void EnableObjects()
     {
-        foreach (Light light in Lights)
+        foreach (Light lght in Lights)
         {
-            light.gameObject.SetActive(true);
+            lght.shadows = LightShadows.Hard;
+            lght.gameObject.SetActive(true);
         }
 
         foreach (InteractorItem item in Items)
@@ -53,14 +54,14 @@ public class RoomCulling : MonoBehaviour
         ListObjects();
     }
 
-#if UNITY_EDITOR
     [EditorButton]
     private void ListObjects()
     {
         Lights = GetComponentsInChildren<Light>(true).ToList();
         Items = GetComponentsInChildren<InteractorItem>(true).ToList();
 
+#if UNITY_EDITOR
         EditorUtility.SetDirty(this);
-    }
 #endif
+    }
 }

@@ -28,6 +28,8 @@ public class Room : MonoBehaviour
 
             door.OnUseDoor += PlayerExitPreviousRoom;
         }
+
+        Culling.DisableObjects();
     }
 
 
@@ -44,12 +46,17 @@ public class Room : MonoBehaviour
         }
     }
 
-    private void PlayerExitPreviousRoom(Door.DoorUseData doorUseData)
+    public void PlayerExitPreviousRoom(Door.DoorUseData doorUseData)
     {
-        if (doorUseData.State != Door.DoorUseState.Success) return;
+        if (doorUseData.State is Door.DoorUseState.Success or Door.DoorUseState.ByCode)
+        {
+            doorUseData.originRoom?.Culling.DisableObjects();
+            doorUseData.destinationRoom.Culling.EnableObjects();
+        }
+    }
 
-        doorUseData.originRoom?.Culling.DisableObjects();
-        doorUseData.destinationRoom.Culling.EnableObjects();
+    public void ForceEnterPlayer()
+    {
     }
 
 #if UNITY_EDITOR

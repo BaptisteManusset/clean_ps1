@@ -23,7 +23,8 @@ public class Door : MonoBehaviour, IUsable
     {
         Fail,
         Locked,
-        Success
+        Success,
+        ByCode
     }
 
     private const float DelayBeforeReuse = 1f;
@@ -148,7 +149,7 @@ public class Door : MonoBehaviour, IUsable
     {
         StartCoroutine(PreventingInstantReuse());
         GameManager.Instance.player.Teleport(anchor);
-        GameManager.Instance.player.RoomAgent.currentRoom = parentRoom;
+        GameManager.Instance.player.RoomAgent.TryGetCurrentRoom();
 
         // OnExitedDoor?.Invoke();
         return this;
