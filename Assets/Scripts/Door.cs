@@ -178,7 +178,7 @@ public class Door : MonoBehaviour, IUsable
             {
                 foreach (KeyValuePair<Door, float> keyValuePair in ruledDestination.Value)
                 {
-                    msg += $"⚙️➡️ {keyValuePair.Key.gameObject.name}\n";
+                    msg += $"⚙️➡️ \"{keyValuePair.Key.gameObject.name}\"\n";
                 }
             }
         }

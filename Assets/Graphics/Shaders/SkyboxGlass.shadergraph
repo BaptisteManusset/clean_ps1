@@ -222,6 +222,29 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
+    "m_ObjectId": "0f066ce49e9c487b94a351d7513eee64",
+    "m_Id": 4,
+    "m_DisplayName": "Normal",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Normal",
+    "m_StageCapability": 2,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BlendNode",
     "m_ObjectId": "0f0dada4a879466a9543f5ab3d456efc",
     "m_Group": {
@@ -917,6 +940,9 @@
         },
         {
             "m_Id": "30f4be01f10a4004a660690c7493c288"
+        },
+        {
+            "m_Id": "0f066ce49e9c487b94a351d7513eee64"
         }
     ],
     "synonyms": [],

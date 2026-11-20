@@ -26,7 +26,7 @@ public class ItemHideIfAlreadyInInventory : MonoBehaviour
 
     private void OnDestroy()
     {
-        Inventory.Instance.OnAddItem -= OnChange;
+        if (Inventory.Instance) Inventory.Instance.OnAddItem -= OnChange;
     }
 
     private void OnChange(Inventory.ItemAddedInfo a_info)
